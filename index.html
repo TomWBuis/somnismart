@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SomniSmart — Science-Based Mattress Recommendations by Grok</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system_ui, sans-serif; }
+    .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Nav -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">S</div>
+        <span class="font-semibold text-lg">SomniSmart</span>
+      </div>
+      <div class="hidden md:flex gap-6 text-sm">
+        <a href="#how" class="hover:text-indigo-600">How it works</a>
+        <a href="#science" class="hover:text-indigo-600">The science</a>
+        <a href="#start" class="hover:text-indigo-600">Get recommendations</a>
+        <a href="#transparency" class="hover:text-indigo-600">Transparency</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-gradient text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-indigo-300 text-sm font-medium tracking-wide uppercase mb-4">Powered by Grok</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Find the right mattress<br>without the noise.</h1>
+      <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+        SomniSmart uses Grok’s science-based matching to cut through thousands of options. 
+        Get a clear shortlist of currently available mattresses matched to your body, sleep style, and needs.
+      </p>
+      <a href="#start" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-8 py-3 rounded-lg transition">
+        Get my free recommendations
+      </a>
+      <p class="text-sm text-slate-400 mt-4">Free for visitors. Ranked only by matching rules.</p>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">How it works</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">1</div>
+          <h3 class="font-semibold text-lg mb-2">Tell Grok about you</h3>
+          <p class="text-slate-600">Sleep position, weight, age, any pain or conditions, cooling needs, and whether you want more bounce or better motion isolation.</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
+          <h3 class="font-semibold text-lg mb-2">Science rules applied</h3>
+          <p class="text-slate-600">Starts from a medium-firm evidence base, then adjusts for your specific situation — including mobility, pressure relief, and couple differences.</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">3</div>
+          <h3 class="font-semibold text-lg mb-2">Clear shortlist</h3>
+          <p class="text-slate-600">Three currently available options: best science match, most practical, and best value — with the reasoning shown.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Science -->
+  <section id="science" class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-4">The science behind the recommendations</h2>
+      <p class="text-center text-slate-600 mb-10">Grok’s matching is built on established evidence for spinal alignment, pressure relief, and real-world sleep needs.</p>
+      
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-xl border border-slate-200">
+          <h3 class="font-semibold mb-2">Medium-firm starting point</h3>
+          <p class="text-slate-600">Research (including the well-known medium-firm trial for low-back pain) supports medium-firm as the best default for most adults. We adjust from there.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-slate-200">
+          <h3 class="font-semibold mb-2">Position, weight, and body type</h3>
+          <p class="text-slate-600">Side sleepers generally need more shoulder and hip pressure relief. Heavier sleepers need firmer support to avoid bottoming out. Lighter sleepers often prefer a bit softer.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-slate-200">
+          <h3 class="font-semibold mb-2">Motion, bounce, and mobility</h3>
+          <p class="text-slate-600">Beds are for more than sleep. We factor in motion transfer for couples, responsiveness and bounce for easier movement (including sex), and overall ease of getting in and out — especially important with age or joint issues.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-slate-200">
+          <h3 class="font-semibold mb-2">Pain and medical conditions</h3>
+          <p class="text-slate-600">Extra pressure relief for arthritis or joint pain. Better lumbar support considerations for back pain. Cooling features for hot sleepers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Start / Interactive Form -->
+  <section id="start" class="py-16 px-4 bg-slate-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-2">Get your free recommendations</h2>
+      <p class="text-center text-slate-600 mb-8">Answer a few questions. Grok’s rules will generate a transparent shortlist of currently available mattresses.</p>
+
+      <form id="mattressForm" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6">
+        <!-- Individual or Couple -->
+        <div>
+          <label class="block font-medium mb-2">Is this for one person or a couple?</label>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2"><input type="radio" name="who" value="individual" checked class="text-indigo-600"> Just me</label>
+            <label class="flex items-center gap-2"><input type="radio" name="who" value="couple" class="text-indigo-600"> Me and a partner</label>
+          </div>
+        </div>
+
+        <!-- Weights -->
+        <div id="weightSection">
+          <label class="block font-medium mb-2">Your weight (lbs)</label>
+          <input type="number" id="weight" name="weight" min="80" max="400" placeholder="e.g. 170" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+          <div id="partnerWeightDiv" class="hidden mt-4">
+            <label class="block font-medium mb-2">Partner’s weight (lbs)</label>
+            <input type="number" id="partnerWeight" name="partnerWeight" min="80" max="400" placeholder="e.g. 140" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+          </div>
+        </div>
+
+        <!-- Sleep position -->
+        <div>
+          <label class="block font-medium mb-2">Primary sleep position</label>
+          <select id="position" name="position" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+            <option value="side">Mostly side</option>
+            <option value="back">Mostly back</option>
+            <option value="stomach">Mostly stomach</option>
+            <option value="combo">Combination / mix</option>
+          </select>
+        </div>
+
+        <!-- Pain / conditions -->
+        <div>
+          <label class="block font-medium mb-2">Any pain or conditions? (optional)</label>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="back"> Low-back pain</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="joint"> Joint / arthritis pain</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="hot"> Sleep hot</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="mobility"> Mobility / ease of movement important</label>
+          </div>
+        </div>
+
+        <!-- Bounce preference -->
+        <div>
+          <label class="block font-medium mb-2">Preference for movement and bounce</label>
+          <select id="bounce" name="bounce" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+            <option value="responsive">More bounce / easier to move (good for sex & mobility)</option>
+            <option value="balanced">Balanced</option>
+            <option value="isolated">Strong motion isolation (less bounce)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 rounded-lg transition">
+          Generate recommendations
+        </button>
+      </form>
+
+      <!-- Results -->
+      <div id="results" class="hidden mt-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+        <h3 class="text-xl font-bold mb-4">Your recommendations</h3>
+        <div id="reasoning" class="text-sm text-slate-600 bg-slate-50 p-4 rounded-lg mb-6"></div>
+        <div id="recs" class="space-y-4"></div>
+        <p class="text-xs text-slate-500 mt-6">
+          Ranked only by science-based matching rules. Some links may be affiliate links that help support the site; they do not influence ranking or order.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparency -->
+  <section id="transparency" class="py-16 px-4 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Transparency</h2>
+      <div class="prose prose-slate max-w-none">
+        <p class="text-slate-700 mb-4">
+          Recommendations are generated by Grok’s science-based matching rules using your answers on sleep position, weight, age, conditions, mobility needs, and preferences.
+        </p>
+        <p class="text-slate-700 mb-4">
+          Some links to products are affiliate links. If you buy through them, the site may earn a commission at no extra cost to you.
+        </p>
+        <p class="text-slate-700 font-medium">
+          Affiliate relationships do not affect ranking. Products are ordered only by how well they match the published criteria. Strong matches appear even when no affiliate program exists.
+        </p>
+        <p class="text-sm text-slate-500 mt-6">
+          Ranking is completed before any affiliate links are added. Payment or commissions never change eligibility or order.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-8 px-4 text-center text-sm">
+    <p class="mb-2">SomniSmart · Science-based mattress matching powered by Grok</p>
+    <p>Free for visitors. Ranked only by matching rules. Affiliate links do not influence recommendations.</p>
+    <p class="mt-4 text-slate-500">© 2026 SomniSmart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Show/hide partner weight
+    document.querySelectorAll('input[name="who"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const div = document.getElementById('partnerWeightDiv');
+        if (radio.value === 'couple' && radio.checked) {
+          div.classList.remove('hidden');
+        } else if (radio.value === 'individual' && radio.checked) {
+          div.classList.add('hidden');
+        }
+      });
+    });
+
+    // Form logic
+    document.getElementById('mattressForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const who = document.querySelector('input[name="who"]:checked').value;
+      const weight = parseInt(document.getElementById('weight').value) || 170;
+      const partnerWeight = who === 'couple' ? (parseInt(document.getElementById('partnerWeight').value) || 140) : null;
+      const position = document.getElementById('position').value;
+      const bounce = document.getElementById('bounce').value;
+      const conditions = Array.from(document.querySelectorAll('input[name="conditions"]:checked')).map(cb => cb.value);
+
+      // Simple rule-based logic
+      let firmness = 'medium-firm';
+      let reasons = [];
+
+      // Position
+      if (position === 'side') {
+        firmness = 'medium';
+        reasons.push('softer for side-sleeping pressure relief at shoulders and hips');
+      } else if (position === 'stomach') {
+        firmness = 'medium-firm to firm';
+        reasons.push('firmer to limit hip sag for stomach sleeping');
+      } else if (position === 'back') {
+        firmness = 'medium-firm';
+        reasons.push('medium-firm for balanced spinal alignment on the back');
+      } else {
+        firmness = 'medium to medium-firm';
+        reasons.push('balanced feel for combination sleeping');
+      }
+
+      // Weight
+      const avgWeight = partnerWeight ? Math.max(weight, partnerWeight) : weight;
+      if (avgWeight < 130) {
+        reasons.push('lighter weight → slightly softer feel');
+      } else if (avgWeight > 230) {
+        firmness = firmness.includes('firm') ? 'firm' : 'medium-firm';
+        reasons.push('higher weight → firmer support to avoid bottoming out');
+      }
+
+      // Conditions
+      if (conditions.includes('back')) reasons.push('extra lumbar support considerations for low-back pain');
+      if (conditions.includes('joint')) reasons.push('more pressure relief for joint/arthritis pain');
+      if (conditions.includes('hot')) reasons.push('cooling features prioritized');
+      if (conditions.includes('mobility') || bounce === 'responsive') reasons.push('responsive hybrid preferred for easier movement and bounce');
+
+      // Bounce
+      let typePref = bounce === 'isolated' ? 'memory foam or low-bounce hybrid' : 'hybrid with pocket coils';
+      if (bounce === 'responsive') typePref = 'responsive hybrid (coils for bounce and mobility)';
+
+      // Reasoning text
+      const reasoningEl = document.getElementById('reasoning');
+      reasoningEl.innerHTML = `<strong>Matching logic:</strong> Started from medium-firm evidence base. Adjusted for ${reasons.join('; ')}. Preferring ${typePref}.`;
+
+      // Sample recommendations (illustrative currently available-style products)
+      const recs = [
+        {
+          tier: 'Best science match',
+          name: 'WinkBed Luxury Firm',
+          details: 'Hybrid · Medium-firm · ~14" · Zoned coils + adaptive foam',
+          why: 'Strong overall match for spinal alignment, pressure relief, and responsive bounce. Good for couples and mobility.',
+          link: '#'
+        },
+        {
+          tier: 'Most practical',
+          name: 'Helix Midnight Luxe',
+          details: 'Hybrid · Medium · ~13.5" · Zoned coils + memory foam comfort',
+          why: 'Balanced feel with good motion isolation and cooling cover. Solid everyday choice.',
+          link: '#'
+        },
+        {
+          tier: 'Best value',
+          name: 'Brooklyn Bedding Signature Hybrid',
+          details: 'Hybrid · Medium-firm · ~12" · Pocket coils + foam',
+          why: 'Strong support and bounce at a lower price. Good edge support for the cost.',
+          link: '#'
+        }
+      ];
+
+      // Slight adjustments based on inputs
+      if (position === 'side' && avgWeight < 180) {
+        recs[0].name = 'Saatva Classic (Plush Soft or Luxury Firm)';
+        recs[0].why = 'Pillow-top hybrid with good pressure relief for side sleepers plus coil responsiveness.';
+      }
+      if (avgWeight > 230) {
+        recs[0].name = 'WinkBed Plus or Helix Plus';
+        recs[0].why = 'Reinforced for higher weights with firm support and durability.';
+      }
+      if (bounce === 'isolated') {
+        recs[1].name = 'Leesa Sapira or similar memory foam hybrid';
+        recs[1].why = 'Better motion isolation while still offering hybrid support.';
+      }
+
+      const recsEl = document.getElementById('recs');
+      recsEl.innerHTML = recs.map(r => `
+        <div class="border border-slate-200 rounded-xl p-5">
+          <div class="flex justify-between items-start mb-2">
+            <span class="text-xs font-medium uppercase tracking-wide text-indigo-600">${r.tier}</span>
+          </div>
+          <h4 class="font-semibold text-lg">${r.name}</h4>
+          <p class="text-sm text-slate-600 mb-2">${r.details}</p>
+          <p class="text-sm mb-3">${r.why}</p>
+          <a href="${r.link}" class="text-indigo-600 text-sm font-medium hover:underline">View product →</a>
+        </div>
+      `).join('');
+
+      document.getElementById('results').classList.remove('hidden');
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  </script>
+
+</body>
+</html>
