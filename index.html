@@ -110,7 +110,7 @@
         <div class="text-center p-6">
           <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">1</div>
           <h3 class="font-semibold text-lg mb-2">Tell Grok about you</h3>
-          <p class="text-slate-600">Sleep position, height, weight, body shape (waist, hips, shoulders), age, any pain or conditions, cooling needs, and whether you want more bounce or better motion isolation.</p>
+          <p class="text-slate-600">Sleep position, height, weight, body shape (waist, hips, shoulders), age, any pain or conditions, cooling needs, material preference (organic, natural, or certified-safe), and whether you want more bounce or better motion isolation.</p>
         </div>
         <div class="text-center p-6">
           <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
@@ -228,6 +228,17 @@
           </select>
         </div>
 
+        <!-- Material preference -->
+        <div>
+          <label class="block font-medium mb-2">Material preference</label>
+          <select id="material" name="material" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+            <option value="none" selected>No preference</option>
+            <option value="organic">Organic (certified organic, e.g. GOTS / GOLS)</option>
+            <option value="natural">Natural (natural latex, wool, cotton; no polyurethane foam)</option>
+            <option value="safe">Commonly accepted as safe (e.g. CertiPUR-US foams, GREENGUARD Gold)</option>
+          </select>
+        </div>
+
         <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 rounded-lg transition">
           Generate recommendations
         </button>
@@ -298,6 +309,8 @@
       helix:    { brandUrl: 'https://helixsleep.com/',          affiliateUrl: '' },
       brooklyn: { brandUrl: 'https://brooklynbedding.com/',     affiliateUrl: '' },
       leesa:    { brandUrl: 'https://www.leesa.com/',           affiliateUrl: '' },
+      avocado:  { brandUrl: 'https://www.avocadogreenmattress.com/', affiliateUrl: '' },
+      birch:    { brandUrl: 'https://birchliving.com/',         affiliateUrl: '' },
       // Chirobed is SomniSmart's own affiliated brand (not an affiliate program): no tracking, no subId.
       chirobed: { brandUrl: 'https://chirobed.com',             affiliateUrl: '', own: true, slot: 'custom' }
     };
@@ -333,6 +346,7 @@
       const partnerWeight = who === 'couple' ? (parseInt(document.getElementById('partnerWeight').value) || 140) : null;
       const position = document.getElementById('position').value;
       const bounce = document.getElementById('bounce').value;
+      const material = (document.getElementById('material') || {}).value || 'none';
       const conditions = Array.from(document.querySelectorAll('input[name="conditions"]:checked')).map(cb => cb.value);
 
       // Simple rule-based logic
@@ -462,6 +476,45 @@
         recs[1].product = 'leesa';
         recs[1].why = 'Better motion isolation while still offering hybrid support.';
       }
+
+      // Material preference (certifications confirmed from brand pages / reputable reviewers, Oct 2026)
+      const softer = position === 'side' || needsZoned;
+      const firmer = avgWeight > 230 || avgWeightFirmFlag || position === 'stomach';
+      const avoFeel = firmer ? 'Firm' : (softer ? 'Plush pillow-top' : 'Medium');
+      const avo = (tier, slot) => ({ tier, slot, product: 'avocado', label: 'Avocado',
+        name: 'Avocado Green Mattress (' + avoFeel + ')',
+        details: 'Latex hybrid · ' + avoFeel + ' · 7-zone pocketed coils · organic Dunlop latex, wool, cotton',
+        why: (firmer ? 'Firm tight-top keeps hips level for heavier or stomach sleepers. ' : softer ? 'Pillow-top with 5" of latex for shoulder and hip pressure relief. ' : 'Balanced medium feel for most positions. ') + 'GOTS-certified organic finished product with GOLS organic latex; also GREENGUARD Gold, OEKO-TEX Standard 100 Class I, MADE SAFE and EWG Verified. No polyurethane foam or fiberglass.' });
+      const saatvaLatex = (tier, slot) => ({ tier, slot, product: 'saatva', label: 'Saatva',
+        name: 'Saatva Latex Hybrid',
+        details: 'Latex hybrid · Medium-firm (6/10) · 5-zone natural latex over pocketed coils',
+        why: 'Zoned latex adds lumbar support with buoyant, cool pressure relief. GOLS-certified organic latex, eco-INSTITUT and GREENGUARD Gold; cover includes organic cotton and organic wool.' });
+      const zenhaven = (tier, slot) => ({ tier, slot, product: 'saatva', label: 'Saatva',
+        name: 'Saatva Zenhaven',
+        details: 'All-latex · Flippable, two firmness sides · 5-zone natural latex',
+        why: 'Flip to the softer side for shoulder and hip relief, firmer side if needs change. GOLS-certified organic latex, eco-INSTITUT and GREENGUARD Gold; no petroleum-based foams.' });
+      const birch = (tier, slot) => ({ tier, slot, product: 'birch', label: 'Birch',
+        name: 'Birch Natural Mattress',
+        details: 'Latex hybrid · Medium-firm · Natural latex, wool, pocketed coils',
+        why: 'Medium-firm support with natural wool and latex, no foams. GOLS-certified organic latex and GREENGUARD Gold; organic cotton cover (not a GOTS-certified finished product).' });
+      if (material === 'organic') {
+        recs.splice(0, 3, avo('Best science match', 'best'), softer ? zenhaven('Most practical', 'practical') : saatvaLatex('Most practical', 'practical'), birch('Best value', 'value'));
+        reasons.push('organic preference → GOTS/GOLS-certified materials (Avocado is GOTS-certified as a finished product)');
+      } else if (material === 'natural') {
+        recs.splice(0, 3, softer ? zenhaven('Best science match', 'best') : saatvaLatex('Best science match', 'best'), birch('Most practical', 'practical'), avo('Best value', 'value'));
+        reasons.push('natural preference → natural latex, wool and cotton, no polyurethane foam');
+      } else if (material === 'safe') {
+        const CERTS = {
+          winkbed: 'CertiPUR-US certified foams.',
+          saatva: 'CertiPUR-US certified foams and GREENGUARD Gold.',
+          helix: 'CertiPUR-US certified foams and GREENGUARD Gold.',
+          brooklyn: 'CertiPUR-US certified foams and GREENGUARD Gold.',
+          leesa: 'CertiPUR-US certified foams.'
+        };
+        recs.forEach(r => { if (CERTS[r.product]) r.why += ' Certifications: ' + CERTS[r.product]; });
+        reasons.push('safety preference → foams certified to CertiPUR-US (low VOC, no formaldehyde or PBDE flame retardants)');
+      }
+      if (material !== 'none') reasoningEl.innerHTML = `<strong>Matching logic:</strong> Started from medium-firm evidence base. Adjusted for ${reasons.join('; ')}. Preferring ${typePref}.`;
 
       // Custom Made: always shown (own brand, listed separately from the ranked picks)
       const fit = [];
