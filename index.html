@@ -891,6 +891,14 @@
         motion: bounce === 'isolated' ? 'High: pocketed coils plus memory foam' : (bounce === 'responsive' ? 'Lower priority: favor responsive latex or poly foam' : 'Moderate: pocketed coils'),
         material: { organic: 'GOTS/GOLS-certified organic', natural: 'Natural latex, wool, cotton (no polyurethane foam)', safe: 'CertiPUR-US foams, GREENGUARD Gold', none: 'No preference' }[material] || 'No preference'
       };
+      const soft = position === 'side' || light;
+      const idealLayers = [
+        material === 'organic' || material === 'natural' ? 'Breathable cover: organic cotton with wool' : (conditions.includes('hot') ? 'Cooling cover (phase-change or cooling fibers)' : 'Breathable knit cover'),
+        (material === 'organic' || material === 'natural' ? 'Comfort: natural latex, ' : (bounce === 'isolated' ? 'Comfort: memory foam (gel/copper if hot), ' : 'Comfort: latex or responsive foam, ')) + (soft ? '2–3" at ILD ~10–19' : heavy ? '1.5–2" at ILD ~19–24' : '1.5–2" at ILD ~14–24') + (material === 'organic' || material === 'natural' ? '' : ', density ' + (heavy ? '4+ lb/ft³ memory / 2.0+ poly' : '3–4 lb/ft³ memory / 1.8+ poly')),
+        'Transition: ' + (heavy ? '1–2" firmer foam or latex, ILD ~24–32' : '1" transition, ILD ~20–28') + (needsZoned ? ', zoned firmer under hips' : ''),
+        'Support: pocketed coils ' + (heavy ? '8"+ tall, ~13–14 gauge center' : '6–8" tall, ~13.5–15 gauge') + (needsZoned || conditions.includes('back') ? ', zoned (firmer hips, softer shoulders)' : '') + ', reinforced edge',
+        'Base: 0.5–1" high-density foam or latex' + (heavy ? ' (1.8+ lb/ft³)' : '')
+      ];
       let idealEl = document.getElementById('ideal');
       if (!idealEl) { idealEl = document.createElement('div'); idealEl.id = 'ideal'; reasoningEl.parentNode.insertBefore(idealEl, reasoningEl); }
       idealEl.className = 'border-2 border-indigo-200 bg-indigo-50 rounded-xl p-5 mb-6';
@@ -907,20 +915,49 @@
           <li><strong>Motion isolation:</strong> ${ideal.motion}</li>
           <li><strong>Materials:</strong> ${ideal.material}</li>
         </ul>
-        <p class="text-xs text-slate-500 mt-2">These are guideline ranges from general sleep-science guidance, not product specs. The picks below are ranked by how close they come.</p>`;
-      const matchNote = (s) => {
-        if (!s || s.custom) return 'Built to order, so it can be made to this ideal. Ask Chirobed to match these targets.';
-        const n = [];
-        const wantLatex = material === 'organic' || material === 'natural';
-        n.push(s.type.includes('latex') ? (wantLatex ? '✓ latex build matches your material preference' : 'latex build') : (wantLatex ? '✗ uses foams, not your natural/organic preference' : '✓ ' + s.type + ' construction'));
-        if (needsZoned || conditions.includes('back')) n.push(s.zoned ? '✓ zoned support' : '✗ no published zoning');
-        if (heavy) n.push(s.gaugeMin && s.gaugeMin <= 14 ? '✓ heavy-gauge coils (' + s.gaugeMin + ')' : (s.gaugeMin ? '~ lightest-load coils ' + s.gaugeMin + ' ga' : '~ coil gauge not published'));
-        if (bounce === 'isolated') n.push(/memory/i.test(JSON.stringify(s.layers)) ? '✓ memory foam for motion isolation' : '~ less motion isolation than memory foam');
-        return n.join(' · ');
+        <p class="text-xs text-slate-500 mt-2">These are guideline ranges from general sleep-science guidance, not product specs. The picks below are scored by how close they come.</p>
+        <div class="mt-3 text-sm"><strong>Designed layer-by-layer (top → bottom):</strong>
+          <ol id="idealLayers" class="list-decimal ml-5 mt-1 space-y-0.5">${idealLayers.map(l => '<li>' + l + '</li>').join('')}</ol></div>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <a href="${shopUrl('chirobed', 'custom')}" target="_blank" rel="noopener" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-lg">Get this custom made by Spine Align →</a>
+          <button type="button" id="copyDesign" class="border border-indigo-600 text-indigo-700 text-sm font-medium px-4 py-2 rounded-lg hover:bg-indigo-100">Copy my design</button>
+        </div>`;
+      const designText = 'My SomniSmart ideal mattress design\nTarget firmness: ' + firmNum + '/10 (' + firmness + ')\n' +
+        Object.entries(ideal).map(([k, v]) => k + ': ' + v).join('\n') + '\nLayers (top to bottom):\n' + idealLayers.map((l, i) => (i + 1) + '. ' + l.replace(/<[^>]+>/g, '')).join('\n') +
+        '\n(Guideline ranges, not product specs.)';
+      document.getElementById('copyDesign').onclick = (e) => {
+        const btn = e.currentTarget, done = () => { btn.textContent = 'Copied ✓'; setTimeout(() => btn.textContent = 'Copy my design', 2000); };
+        if (navigator.clipboard) navigator.clipboard.writeText(designText).then(done, () => window.prompt('Copy your design:', designText));
+        else window.prompt('Copy your design:', designText);
       };
+      const matchInfo = (s) => {
+        if (!s || s.custom) return { score: null, note: 'Built to order to your exact design above. Ask Spine Align to build these targets.' };
+        const n = []; let pts = 0, max = 0;
+        const chk = (ok, good, bad, w = 1) => { max += w; if (ok === true) { pts += w; n.push('✓ ' + good); } else if (ok === null) { pts += w / 2; n.push('~ ' + bad); } else n.push('✗ ' + bad); };
+        const wantLatex = material === 'organic' || material === 'natural';
+        const hasMemory = /memory/i.test(JSON.stringify(s.layers));
+        if (wantLatex) chk(s.type.includes('latex'), 'latex build fits your material preference', 'uses foams, not your natural/organic preference', 2);
+        else if (bounce === 'isolated') chk(hasMemory ? true : null, 'memory foam for motion isolation', 'less motion isolation than memory foam');
+        else chk(s.type !== 'innerspring' || null, s.type + ' construction', 'traditional innerspring');
+        if (needsZoned || conditions.includes('back')) chk(s.zoned, 'zoned support', 'no published zoning', 2);
+        if (heavy) chk(s.gaugeMin ? (s.gaugeMin <= 14 ? true : null) : null, 'heavy-gauge coils (' + s.gaugeMin + ' ga)', s.gaugeMin ? 'lightest-gauge coils ' + s.gaugeMin + ' ga' : 'coil gauge not published', 2);
+        if (conditions.includes('hot')) chk(s.coils || s.type.includes('latex') ? true : null, 'coils/latex for airflow', 'limited airflow');
+        const pub = JSON.stringify(s).split(NP).length - 1;
+        chk(pub <= 4 ? true : (pub <= 10 ? null : false), 'specs well published', pub + ' spec fields not published');
+        return { score: Math.round(100 * pts / max), note: n.join(' · ') };
+      };
+      const matchNote = (s) => matchInfo(s).note;
       const specKey = (r) => r.product === 'chirobed' ? 'chirobed' : /Plus/.test(r.name) ? 'winkbedplus' : /Classic/.test(r.name) ? 'saatvaclassic'
         : /Zenhaven/.test(r.name) ? 'zenhaven' : /Latex Hybrid/.test(r.name) ? 'saatvalatex' : r.product;
       const recsEl = document.getElementById('recs');
+      const bestScore = Math.max(...recs.filter(r => !r.own).map(r => matchInfo(SPECS[specKey(r)]).score));
+      const custom = recs.find(r => r.own);
+      if (custom) { custom.why += ' Spine Align can build the exact "Your ideal mattress" design above.'; custom.details += ' · Builds your exact design'; }
+      let weakEl = document.getElementById('weakMatch');
+      if (!weakEl) { weakEl = document.createElement('div'); weakEl.id = 'weakMatch'; recsEl.parentNode.insertBefore(weakEl, recsEl); }
+      weakEl.className = bestScore < 70 ? 'border-2 border-amber-400 bg-amber-50 rounded-xl p-5 mb-6' : 'hidden';
+      weakEl.innerHTML = bestScore < 70 ? `<p class="font-semibold">None of these match your ideal closely (best match ${bestScore}%). Ask to be custom made by Spine Align.</p>
+        <a href="${shopUrl('chirobed', 'custom')}" target="_blank" rel="noopener" class="inline-block mt-3 bg-amber-500 hover:bg-amber-400 text-white font-semibold px-5 py-2.5 rounded-lg">Ask Spine Align to custom make it →</a>` : '';
       recsEl.innerHTML = recs.map(r => `
         <div class="border border-slate-200 rounded-xl p-5">
           <div class="flex justify-between items-start mb-2">
@@ -930,7 +967,7 @@
           <p class="text-sm text-slate-600 mb-2">${r.details}</p>
           <p class="text-sm mb-3">${r.why}</p>
           <a href="${shopUrl(r.product, r.slot)}" target="_blank" rel="${r.own ? 'noopener' : 'sponsored nofollow noopener'}" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-lg">Shop ${r.label || (r.product.charAt(0).toUpperCase() + r.product.slice(1)).replace('Winkbed','WinkBed').replace('Brooklyn','Brooklyn Bedding')} →</a>
-          <p class="text-xs bg-slate-50 rounded p-2 mt-3"><strong>How close it matches:</strong> ${matchNote(SPECS[specKey(r)])}</p>
+          <p class="text-xs bg-slate-50 rounded p-2 mt-3"><strong>How close it matches${r.own ? '' : ': ' + matchInfo(SPECS[specKey(r)]).score + '%'}:</strong> ${matchNote(SPECS[specKey(r)])}</p>
           <details class="mt-2 text-xs"><summary class="cursor-pointer text-indigo-600 font-medium">Full specs</summary><div class="mt-2 overflow-x-auto">${specRows(SPECS[specKey(r)])}</div></details>
           ${r.own ? '<p class="text-xs text-slate-500 mt-2">SomniSmart is affiliated with Chirobed (our own brand).</p>' : ''}
         </div>
