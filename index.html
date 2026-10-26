@@ -32,17 +32,22 @@
 
   <!-- Hero -->
   <section class="hero-gradient text-white py-20 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-indigo-300 text-sm font-medium tracking-wide uppercase mb-4">Powered by Grok</p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Find the right mattress<br>without the noise.</h1>
-      <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-        SomniSmart uses Grok’s science-based matching to cut through thousands of options. 
-        Get a clear shortlist of currently available mattresses matched to your body, sleep style, and needs.
-      </p>
-      <a href="#start" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-8 py-3 rounded-lg transition">
-        Get my free recommendations
-      </a>
-      <p class="text-sm text-slate-400 mt-4">Free for visitors. Ranked only by matching rules.</p>
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div class="flex-1 text-center md:text-left">
+        <p class="text-indigo-300 text-sm font-medium tracking-wide uppercase mb-4">Powered by Grok</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Find the right mattress<br>without the noise.</h1>
+        <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto md:mx-0">
+          SomniSmart uses Grok’s science-based matching to cut through thousands of options. 
+          Get a clear shortlist of currently available mattresses matched to your body, sleep style, and needs.
+        </p>
+        <a href="#start" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-8 py-3 rounded-lg transition">
+          Get my free recommendations
+        </a>
+        <p class="text-sm text-slate-400 mt-4">Free for visitors. Ranked only by matching rules.</p>
+      </div>
+      <div class="flex-shrink-0">
+        <img src="assets/mascot-robot.svg" alt="SomniSmart mascot robot hugging a pillow" width="539" height="833" class="w-44 sm:w-52 md:w-64 lg:w-80 h-auto drop-shadow-2xl" loading="eager">
+      </div>
     </div>
   </section>
 
@@ -54,7 +59,7 @@
         <div class="text-center p-6">
           <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">1</div>
           <h3 class="font-semibold text-lg mb-2">Tell Grok about you</h3>
-          <p class="text-slate-600">Sleep position, weight, age, any pain or conditions, cooling needs, and whether you want more bounce or better motion isolation.</p>
+          <p class="text-slate-600">Sleep position, height, weight, body shape (waist, hips, shoulders), age, any pain or conditions, cooling needs, and whether you want more bounce or better motion isolation.</p>
         </div>
         <div class="text-center p-6">
           <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
@@ -83,7 +88,7 @@
         </div>
         <div class="bg-white p-6 rounded-xl border border-slate-200">
           <h3 class="font-semibold mb-2">Position, weight, and body type</h3>
-          <p class="text-slate-600">Side sleepers generally need more shoulder and hip pressure relief. Heavier sleepers need firmer support to avoid bottoming out. Lighter sleepers often prefer a bit softer.</p>
+          <p class="text-slate-600">Side sleepers generally need more shoulder and hip pressure relief. Heavier sleepers need firmer support to avoid bottoming out. Lighter sleepers often prefer a bit softer. We use height to calculate BMI, and waist, hip, and shoulder size to judge body shape: curvy hips with a narrow waist or broad shoulders need softer comfort layers or zoned support so the spine stays aligned.</p>
         </div>
         <div class="bg-white p-6 rounded-xl border border-slate-200">
           <h3 class="font-semibold mb-2">Motion, bounce, and mobility</h3>
@@ -117,9 +122,26 @@
         <div id="weightSection">
           <label class="block font-medium mb-2">Your weight (lbs)</label>
           <input type="number" id="weight" name="weight" min="80" max="400" placeholder="e.g. 170" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+            <div><label class="block text-sm font-medium mb-1">Your height (ft)</label><select id="heightFt" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">–</option><option value="4">4 ft</option><option value="5">5 ft</option><option value="6">6 ft</option><option value="7">7 ft</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Inches</label><select id="heightIn" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">–</option><option value="0">0 in</option><option value="1">1 in</option><option value="2">2 in</option><option value="3">3 in</option><option value="4">4 in</option><option value="5">5 in</option><option value="6">6 in</option><option value="7">7 in</option><option value="8">8 in</option><option value="9">9 in</option><option value="10">10 in</option><option value="11">11 in</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Body shape (optional)</label><select id="shape" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">Prefer not to say</option><option value="female">Woman</option><option value="male">Man</option><option value="curvy">Curvy hips / narrow waist</option><option value="broad">Broad shoulders</option><option value="straight">Straight / even build</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Waist (in, optional)</label><input type="number" id="waist" min="20" max="70" placeholder="e.g. 30" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></div>
+            <div><label class="block text-sm font-medium mb-1">Hips (in, optional)</label><input type="number" id="hips" min="25" max="80" placeholder="e.g. 40" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></div>
+            <div><label class="block text-sm font-medium mb-1">Dress shirt neck (in, optional)</label><input type="number" id="neck" min="12" max="24" step="0.5" placeholder="e.g. 16.5" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><p class="text-xs text-slate-500 mt-1">For men: helps gauge shoulder width.</p></div>
+          </div>
           <div id="partnerWeightDiv" class="hidden mt-4">
             <label class="block font-medium mb-2">Partner’s weight (lbs)</label>
             <input type="number" id="partnerWeight" name="partnerWeight" min="80" max="400" placeholder="e.g. 140" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+            <div><label class="block text-sm font-medium mb-1">Partner’s height (ft)</label><select id="partnerheightFt" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">–</option><option value="4">4 ft</option><option value="5">5 ft</option><option value="6">6 ft</option><option value="7">7 ft</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Inches</label><select id="partnerheightIn" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">–</option><option value="0">0 in</option><option value="1">1 in</option><option value="2">2 in</option><option value="3">3 in</option><option value="4">4 in</option><option value="5">5 in</option><option value="6">6 in</option><option value="7">7 in</option><option value="8">8 in</option><option value="9">9 in</option><option value="10">10 in</option><option value="11">11 in</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Body shape (optional)</label><select id="partnershape" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">Prefer not to say</option><option value="female">Woman</option><option value="male">Man</option><option value="curvy">Curvy hips / narrow waist</option><option value="broad">Broad shoulders</option><option value="straight">Straight / even build</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Waist (in, optional)</label><input type="number" id="partnerwaist" min="20" max="70" placeholder="e.g. 30" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></div>
+            <div><label class="block text-sm font-medium mb-1">Hips (in, optional)</label><input type="number" id="partnerhips" min="25" max="80" placeholder="e.g. 40" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></div>
+            <div><label class="block text-sm font-medium mb-1">Dress shirt neck (in, optional)</label><input type="number" id="partnerneck" min="12" max="24" step="0.5" placeholder="e.g. 16.5" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><p class="text-xs text-slate-500 mt-1">For men: helps gauge shoulder width.</p></div>
+          </div>
           </div>
         </div>
 
@@ -178,7 +200,7 @@
       <h2 class="text-3xl font-bold text-center mb-8">Transparency</h2>
       <div class="prose prose-slate max-w-none">
         <p class="text-slate-700 mb-4">
-          Recommendations are generated by Grok’s science-based matching rules using your answers on sleep position, weight, age, conditions, mobility needs, and preferences.
+          Recommendations are generated by Grok’s science-based matching rules using your answers on sleep position, height, weight, body shape, age, conditions, mobility needs, and preferences.
         </p>
         <p class="text-slate-700 mb-4">
           Some links to products are affiliate links. If you buy through them, the site may earn a commission at no extra cost to you.
@@ -204,7 +226,7 @@
     // Show/hide partner weight
     document.querySelectorAll('input[name="who"]').forEach(radio => {
       radio.addEventListener('change', () => {
-        const div = document.getElementById('partnerWeightDiv');
+        const div = document.getElementById('partnerWeightDiv'); // includes partner body measurements
         if (radio.value === 'couple' && radio.checked) {
           div.classList.remove('hidden');
         } else if (radio.value === 'individual' && radio.checked) {
@@ -227,6 +249,7 @@
       // Simple rule-based logic
       let firmness = 'medium-firm';
       let reasons = [];
+      let avgWeightFirmFlag = false;
 
       // Position
       if (position === 'side') {
@@ -252,6 +275,47 @@
         reasons.push('higher weight → firmer support to avoid bottoming out');
       }
 
+      // Body measurements (all optional; blank fields keep defaults)
+      const num = id => { const v = parseFloat((document.getElementById(id) || {}).value); return isNaN(v) ? null : v; };
+      const readBody = (p, wt) => {
+        const ft = num(p + 'heightFt'), inch = num(p + 'heightIn');
+        const h = ft !== null ? ft * 12 + (inch || 0) : null;
+        const waist = num(p + 'waist'), hips = num(p + 'hips'), neck = num(p + 'neck');
+        const shape = (document.getElementById(p + 'shape') || {}).value || '';
+        return { wt, h, bmi: h ? 703 * wt / (h * h) : null, wpi: h ? wt / h : null,
+          hwr: waist && hips ? hips / waist : null, curvy: shape === 'curvy' || (waist && hips && hips / waist >= 1.3),
+          broad: shape === 'broad' || (neck !== null && neck >= 17) };
+      };
+      const people = [{ label: 'you', b: readBody('', weight) }];
+      if (who === 'couple') people.push({ label: 'your partner', b: readBody('partner', partnerWeight) });
+      let needsFirmer = false, needsZoned = false;
+      people.forEach(({ label, b }) => {
+        if (b.bmi) {
+          const info = `BMI ${b.bmi.toFixed(1)}, ${b.wpi.toFixed(1)} lb per inch of height`;
+          if (b.bmi > 30 && b.wt <= 230) {
+            needsFirmer = true;
+            firmness = firmness.includes('firm') ? 'firm' : 'medium-firm';
+            reasons.push(`${label}: ${info} → firmer, thicker, higher-density build to avoid bottoming out`);
+          } else if (b.bmi < 20 && b.wt >= 130) {
+            reasons.push(`${label}: ${info} → slightly softer feel (less body mass to sink into the comfort layers)`);
+          } else {
+            reasons.push(`${label}: ${info}`);
+          }
+        }
+        if (b.curvy) {
+          needsZoned = true;
+          if (firmness === 'firm') firmness = 'medium-firm';
+          reasons.push(`${label}: ${b.hwr ? 'hip-to-waist ratio ' + b.hwr.toFixed(2) + ' (curvy hips, narrower waist)' : 'curvier hips'} → avoid too-firm; softer comfort layer or zoned support so hips sink in without tilting the pelvis` + ((position === 'side' || position === 'back' || position === 'combo') ? ', especially important for ' + position + ' sleeping' : ''));
+        }
+        if (b.broad && (position === 'side' || position === 'combo')) {
+          needsZoned = true;
+          reasons.push(`${label}: broad shoulders on the side → extra shoulder pressure relief (softer top or zoned support)`);
+        } else if (b.broad) {
+          reasons.push(`${label}: broad shoulders noted`);
+        }
+      });
+      if (needsFirmer) avgWeightFirmFlag = true;
+
       // Conditions
       if (conditions.includes('back')) reasons.push('extra lumbar support considerations for low-back pain');
       if (conditions.includes('joint')) reasons.push('more pressure relief for joint/arthritis pain');
@@ -261,6 +325,8 @@
       // Bounce
       let typePref = bounce === 'isolated' ? 'memory foam or low-bounce hybrid' : 'hybrid with pocket coils';
       if (bounce === 'responsive') typePref = 'responsive hybrid (coils for bounce and mobility)';
+
+      if (needsZoned) typePref += ', with zoned support and a pressure-relieving comfort layer';
 
       // Reasoning text
       const reasoningEl = document.getElementById('reasoning');
@@ -296,7 +362,7 @@
         recs[0].name = 'Saatva Classic (Plush Soft or Luxury Firm)';
         recs[0].why = 'Pillow-top hybrid with good pressure relief for side sleepers plus coil responsiveness.';
       }
-      if (avgWeight > 230) {
+      if (avgWeight > 230 || avgWeightFirmFlag) {
         recs[0].name = 'WinkBed Plus or Helix Plus';
         recs[0].why = 'Reinforced for higher weights with firm support and durability.';
       }
