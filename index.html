@@ -185,6 +185,7 @@
       <!-- Results -->
       <div id="results" class="hidden mt-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
         <h3 class="text-xl font-bold mb-4">Your recommendations</h3>
+        <p class="text-xs text-slate-500 mb-4">Disclosure: some product links may be affiliate links, and SomniSmart may earn a commission if you buy, at no extra cost to you. Picks are chosen only by our fit rules, never by commission. <a href="disclosure.html" class="underline hover:text-indigo-600">Learn more</a>.</p>
         <div id="reasoning" class="text-sm text-slate-600 bg-slate-50 p-4 rounded-lg mb-6"></div>
         <div id="recs" class="space-y-4"></div>
         <p class="text-xs text-slate-500 mt-6">
@@ -219,10 +220,44 @@
   <footer class="bg-slate-900 text-slate-400 py-8 px-4 text-center text-sm">
     <p class="mb-2">SomniSmart · Science-based mattress matching powered by Grok</p>
     <p>Free for visitors. Ranked only by matching rules. Affiliate links do not influence recommendations.</p>
+    <p class="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="disclosure.html" class="hover:text-white">Affiliate disclosure</a>
+      <a href="privacy.html" class="hover:text-white">Privacy policy</a>
+      <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      <a href="contact.html" class="hover:text-white">Contact</a>
+    </p>
     <p class="mt-4 text-slate-500">© 2026 SomniSmart. All rights reserved.</p>
   </footer>
 
   <script>
+    // ===================== AFFILIATE LINKS: PASTE HERE =====================
+    // Once a brand approves you (Impact, Awin, etc.), paste its tracking link
+    // into that product's affiliateUrl below, e.g.
+    //   affiliateUrl: 'https://brand.pxf.io/c/XXXX/YYYY/ZZZZ'
+    // Leave affiliateUrl as '' until approved: the Shop button then falls back
+    // to the brand's official homepage (brandUrl), with no tracking.
+    // When an affiliateUrl is set, a subId (best / practical / value) is added
+    // automatically so you can see which result slot earned the click.
+    // Affiliate links NEVER change which products are recommended or their order.
+    // =========================================================================
+    const PRODUCTS = {
+      winkbed:  { brandUrl: 'https://www.winkbeds.com/',        affiliateUrl: '' },
+      saatva:   { brandUrl: 'https://www.saatva.com/',          affiliateUrl: '' },
+      helix:    { brandUrl: 'https://helixsleep.com/',          affiliateUrl: '' },
+      brooklyn: { brandUrl: 'https://brooklynbedding.com/',     affiliateUrl: '' },
+      leesa:    { brandUrl: 'https://www.leesa.com/',           affiliateUrl: '' }
+    };
+    const SUBID_PARAM = 'subId1'; // Impact uses subId1; Awin uses clickref. Change per network if needed.
+    function shopUrl(key, slot) {
+      const p = PRODUCTS[key] || {};
+      if (p.affiliateUrl) {
+        try { const u = new URL(p.affiliateUrl); u.searchParams.set(SUBID_PARAM, slot); return u.toString(); }
+        catch (e) { return p.affiliateUrl; }
+      }
+      return p.brandUrl || '#';
+    }
+
     // Show/hide partner weight
     document.querySelectorAll('input[name="who"]').forEach(radio => {
       radio.addEventListener('change', () => {
@@ -339,35 +374,38 @@
           name: 'WinkBed Luxury Firm',
           details: 'Hybrid · Medium-firm · ~14" · Zoned coils + adaptive foam',
           why: 'Strong overall match for spinal alignment, pressure relief, and responsive bounce. Good for couples and mobility.',
-          link: '#'
+          product: 'winkbed', slot: 'best'
         },
         {
           tier: 'Most practical',
           name: 'Helix Midnight Luxe',
           details: 'Hybrid · Medium · ~13.5" · Zoned coils + memory foam comfort',
           why: 'Balanced feel with good motion isolation and cooling cover. Solid everyday choice.',
-          link: '#'
+          product: 'helix', slot: 'practical'
         },
         {
           tier: 'Best value',
           name: 'Brooklyn Bedding Signature Hybrid',
           details: 'Hybrid · Medium-firm · ~12" · Pocket coils + foam',
           why: 'Strong support and bounce at a lower price. Good edge support for the cost.',
-          link: '#'
+          product: 'brooklyn', slot: 'value'
         }
       ];
 
       // Slight adjustments based on inputs
       if (position === 'side' && avgWeight < 180) {
         recs[0].name = 'Saatva Classic (Plush Soft or Luxury Firm)';
+        recs[0].product = 'saatva';
         recs[0].why = 'Pillow-top hybrid with good pressure relief for side sleepers plus coil responsiveness.';
       }
       if (avgWeight > 230 || avgWeightFirmFlag) {
         recs[0].name = 'WinkBed Plus or Helix Plus';
+        recs[0].product = 'winkbed';
         recs[0].why = 'Reinforced for higher weights with firm support and durability.';
       }
       if (bounce === 'isolated') {
         recs[1].name = 'Leesa Sapira or similar memory foam hybrid';
+        recs[1].product = 'leesa';
         recs[1].why = 'Better motion isolation while still offering hybrid support.';
       }
 
@@ -380,7 +418,7 @@
           <h4 class="font-semibold text-lg">${r.name}</h4>
           <p class="text-sm text-slate-600 mb-2">${r.details}</p>
           <p class="text-sm mb-3">${r.why}</p>
-          <a href="${r.link}" class="text-indigo-600 text-sm font-medium hover:underline">View product →</a>
+          <a href="${shopUrl(r.product, r.slot)}" target="_blank" rel="sponsored nofollow noopener" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-lg">Shop ${(r.product.charAt(0).toUpperCase() + r.product.slice(1)).replace('Winkbed','WinkBed').replace('Brooklyn','Brooklyn Bedding')} →</a>
         </div>
       `).join('');
 
