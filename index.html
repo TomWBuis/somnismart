@@ -322,6 +322,17 @@
             <div><label class="block text-sm font-medium mb-1">Hips (in, optional)</label><input type="number" id="partnerhips" min="25" max="80" placeholder="e.g. 40" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></div>
             <div><label class="block text-sm font-medium mb-1">Dress shirt neck (in, optional)</label><input type="number" id="partnerneck" min="12" max="24" step="0.5" placeholder="e.g. 16.5" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><p class="text-xs text-slate-500 mt-1">For men: helps gauge shoulder width.</p></div>
           </div>
+            <div class="mt-4"><label class="block text-sm font-medium mb-1">Partner’s primary sleep position</label>
+              <select id="partnerPosition" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="side">Mostly side</option><option value="back">Mostly back</option><option value="stomach">Mostly stomach</option><option value="combo">Combination / mix</option></select></div>
+            <div class="mt-4"><label class="block text-sm font-medium mb-1">Partner’s pain or conditions (optional)</label>
+              <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="back"> Low-back pain</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="joint"> Joint / arthritis pain</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="hot"> Sleeps hot</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="mobility"> Mobility / ease of movement important</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="hip"> Hip pressure points</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="shoulder"> Shoulder pressure points</label>
+              </div></div>
           </div>
         </div>
 
@@ -344,6 +355,8 @@
             <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="joint"> Joint / arthritis pain</label>
             <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="hot"> Sleep hot</label>
             <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="mobility"> Mobility / ease of movement important</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="hip"> Hip pressure points</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="shoulder"> Shoulder pressure points</label>
           </div>
         </div>
 
@@ -590,7 +603,10 @@
       const position = document.getElementById('position').value;
       const bounce = document.getElementById('bounce').value;
       const material = (document.getElementById('material') || {}).value || 'none';
-      const conditions = Array.from(document.querySelectorAll('input[name="conditions"]:checked')).map(cb => cb.value);
+      const myConds = Array.from(document.querySelectorAll('input[name="conditions"]:checked')).map(cb => cb.value);
+      const partnerConds = who === 'couple' ? Array.from(document.querySelectorAll('input[name="pconditions"]:checked')).map(cb => cb.value) : [];
+      const partnerPosition = who === 'couple' ? document.getElementById('partnerPosition').value : null;
+      const conditions = Array.from(new Set(myConds.concat(partnerConds)));
 
       // Simple rule-based logic
       let firmness = 'medium-firm';
@@ -664,6 +680,8 @@
 
       // Conditions
       if (conditions.includes('back')) reasons.push('extra lumbar support considerations for low-back pain');
+      if (conditions.includes('hip') || conditions.includes('shoulder')) { needsZoned = true; reasons.push('hip/shoulder pressure points → softer, thicker comfort layer with lower ILD and zoned support'); }
+      if (partnerPosition && partnerPosition !== position) reasons.push('partner sleeps ' + partnerPosition + ' (you: ' + position + ') → per-side targets below');
       if (conditions.includes('joint')) reasons.push('more pressure relief for joint/arthritis pain');
       if (conditions.includes('hot')) reasons.push('cooling features prioritized');
       if (conditions.includes('mobility') || bounce === 'responsive') reasons.push('responsive hybrid preferred for easier movement and bounce');
@@ -899,6 +917,35 @@
         'Support: pocketed coils ' + (heavy ? '8"+ tall, ~13–14 gauge center' : '6–8" tall, ~13.5–15 gauge') + (needsZoned || conditions.includes('back') ? ', zoned (firmer hips, softer shoulders)' : '') + ', reinforced edge',
         'Base: 0.5–1" high-density foam or latex' + (heavy ? ' (1.8+ lb/ft³)' : '')
       ];
+      const personTarget = (label, pos, wt, b, conds) => {
+        let f = { side: 5, back: 6.5, stomach: 7, combo: 6 }[pos] || 6;
+        if (wt < 130) f -= 0.5; else if (wt > 230) f += 1;
+        if (b && b.bmi && b.bmi > 30 && wt <= 230) f += 0.5;
+        if (b && b.curvy) f -= 0.5;
+        const pp = (conds.includes('hip') ? 1 : 0) + (conds.includes('shoulder') ? 1 : 0);
+        f -= Math.min(1.5, pp * 0.75);
+        if (conds.includes('back') && f < 5.5) f = 5.5;
+        f = Math.max(3, Math.min(8, Math.round(f * 2) / 2));
+        const softTop = f <= 5.5;
+        return { label, pos, wt, firm: f,
+          comfort: softTop ? '3–5" comfort, top layer ILD ~10–16' : (f >= 7 ? '2–3" comfort, ILD ~19–28' : '2–4" comfort, ILD ~14–22'),
+          density: wt > 230 ? 'memory 4+ lb/ft³ / poly 1.8–2.0+' : 'memory 3–4 lb/ft³ / poly 1.5–1.8+',
+          coils: wt > 230 ? '8"+ pocketed, ~13–14 ga center' : '6–8" pocketed, ~13.5–15 ga',
+          zoned: pp > 0 || (b && (b.curvy || b.broad)) || conds.includes('back'),
+          pressure: [conds.includes('hip') ? 'hips' : '', conds.includes('shoulder') ? 'shoulders' : ''].filter(Boolean).join(' & ') };
+      };
+      const sides = [personTarget('Your side', position, weight, people[0].b, myConds)];
+      if (who === 'couple') sides.push(personTarget('Partner side', partnerPosition, partnerWeight, people[1].b, partnerConds));
+      const firmGap = sides.length === 2 ? Math.abs(sides[0].firm - sides[1].firm) : 0;
+      const splitNeeded = firmGap >= 1.5;
+      const sidesHtml = sides.length < 2 ? '' : `<div class="mt-4 text-sm"><strong>Per-side design:</strong>
+        <div class="grid md:grid-cols-2 gap-3 mt-2">${sides.map(t => `<div class="bg-white rounded-lg p-3 border border-indigo-100">
+          <p class="font-medium">${t.label} (${t.pos}, ${t.wt} lb)</p>
+          <p>Firmness: ${t.firm}/10</p><p>Comfort: ${t.comfort}</p><p>Density: ${t.density}</p><p>Coils: ${t.coils}</p>
+          <p>Zoning: ${t.zoned ? 'Yes' + (t.pressure ? ' (relief for ' + t.pressure + ')' : '') : 'Optional'}</p></div>`).join('')}</div>
+        <p class="mt-2 ${splitNeeded ? 'font-semibold text-amber-700' : 'text-slate-600'}">${splitNeeded
+          ? 'Your sides differ by ' + firmGap + ' firmness points. Recommend a split king or dual-firmness build, or a custom split build by Spine Align made to each side’s specs.'
+          : 'Your sides are within ' + firmGap + ' firmness points, so one shared feel can work; motion isolation matters.'}</p></div>`;
       let idealEl = document.getElementById('ideal');
       if (!idealEl) { idealEl = document.createElement('div'); idealEl.id = 'ideal'; reasoningEl.parentNode.insertBefore(idealEl, reasoningEl); }
       idealEl.className = 'border-2 border-indigo-200 bg-indigo-50 rounded-xl p-5 mb-6';
@@ -918,13 +965,14 @@
         <p class="text-xs text-slate-500 mt-2">These are guideline ranges from general sleep-science guidance, not product specs. The picks below are scored by how close they come.</p>
         <div class="mt-3 text-sm"><strong>Designed layer-by-layer (top → bottom):</strong>
           <ol id="idealLayers" class="list-decimal ml-5 mt-1 space-y-0.5">${idealLayers.map(l => '<li>' + l + '</li>').join('')}</ol></div>
+        ${sidesHtml}
         <div class="flex flex-wrap gap-2 mt-4">
-          <a href="${shopUrl('chirobed', 'custom')}" target="_blank" rel="noopener" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-lg">Get this custom made by Spine Align →</a>
+          <a href="${shopUrl('chirobed', 'custom')}" target="_blank" rel="noopener" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-lg">${splitNeeded ? 'Get a custom split build by Spine Align →' : 'Get this custom made by Spine Align →'}</a>
           <button type="button" id="copyDesign" class="border border-indigo-600 text-indigo-700 text-sm font-medium px-4 py-2 rounded-lg hover:bg-indigo-100">Copy my design</button>
         </div>`;
       const designText = 'My SomniSmart ideal mattress design\nTarget firmness: ' + firmNum + '/10 (' + firmness + ')\n' +
         Object.entries(ideal).map(([k, v]) => k + ': ' + v).join('\n') + '\nLayers (top to bottom):\n' + idealLayers.map((l, i) => (i + 1) + '. ' + l.replace(/<[^>]+>/g, '')).join('\n') +
-        '\n(Guideline ranges, not product specs.)';
+        (sides.length > 1 ? '\nPer side:\n' + sides.map(t => t.label + ': ' + t.firm + '/10, ' + t.comfort + ', ' + t.density + ', ' + t.coils + ', zoning ' + (t.zoned ? 'yes' : 'optional')).join('\n') + (splitNeeded ? '\nSplit/dual-firmness build recommended.' : '') : '') + '\n(Guideline ranges, not product specs.)';
       document.getElementById('copyDesign').onclick = (e) => {
         const btn = e.currentTarget, done = () => { btn.textContent = 'Copied ✓'; setTimeout(() => btn.textContent = 'Copy my design', 2000); };
         if (navigator.clipboard) navigator.clipboard.writeText(designText).then(done, () => window.prompt('Copy your design:', designText));
@@ -942,6 +990,7 @@
         if (needsZoned || conditions.includes('back')) chk(s.zoned, 'zoned support', 'no published zoning', 2);
         if (heavy) chk(s.gaugeMin ? (s.gaugeMin <= 14 ? true : null) : null, 'heavy-gauge coils (' + s.gaugeMin + ' ga)', s.gaugeMin ? 'lightest-gauge coils ' + s.gaugeMin + ' ga' : 'coil gauge not published', 2);
         if (conditions.includes('hot')) chk(s.coils || s.type.includes('latex') ? true : null, 'coils/latex for airflow', 'limited airflow');
+        if (sides.length === 2) chk(splitNeeded ? false : true, 'one feel can suit both sleepers', 'sides differ ' + firmGap + ' pts; one firmness can’t fit both (needs split/dual build)', 2);
         const pub = JSON.stringify(s).split(NP).length - 1;
         chk(pub <= 4 ? true : (pub <= 10 ? null : false), 'specs well published', pub + ' spec fields not published');
         return { score: Math.round(100 * pts / max), note: n.join(' · ') };
