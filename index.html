@@ -69,7 +69,7 @@
         <div class="text-center p-6">
           <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">3</div>
           <h3 class="font-semibold text-lg mb-2">Clear shortlist</h3>
-          <p class="text-slate-600">Three currently available options: best science match, most practical, and best value — with the reasoning shown.</p>
+          <p class="text-slate-600">Three currently available options (best science match, most practical, and best value) plus a custom-made option — with the reasoning shown.</p>
         </div>
       </div>
     </div>
@@ -187,7 +187,7 @@
         <h3 class="text-xl font-bold mb-4">Your recommendations</h3>
         <p class="text-xs text-slate-500 mb-4">Disclosure: some product links may be affiliate links, and SomniSmart may earn a commission if you buy, at no extra cost to you. Picks are chosen only by our fit rules, never by commission. <a href="disclosure.html" class="underline hover:text-indigo-600">Learn more</a>.</p>
         <div id="reasoning" class="text-sm text-slate-600 bg-slate-50 p-4 rounded-lg mb-6"></div>
-        <div id="recs" class="space-y-4"></div>
+        <div id="recs" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         <p class="text-xs text-slate-500 mt-6">
           Ranked only by science-based matching rules. Some links may be affiliate links that help support the site; they do not influence ranking or order.
         </p>
@@ -246,11 +246,14 @@
       saatva:   { brandUrl: 'https://www.saatva.com/',          affiliateUrl: '' },
       helix:    { brandUrl: 'https://helixsleep.com/',          affiliateUrl: '' },
       brooklyn: { brandUrl: 'https://brooklynbedding.com/',     affiliateUrl: '' },
-      leesa:    { brandUrl: 'https://www.leesa.com/',           affiliateUrl: '' }
+      leesa:    { brandUrl: 'https://www.leesa.com/',           affiliateUrl: '' },
+      // Chirobed is SomniSmart's own affiliated brand (not an affiliate program): no tracking, no subId.
+      chirobed: { brandUrl: 'https://chirobed.com',             affiliateUrl: '', own: true, slot: 'custom' }
     };
     const SUBID_PARAM = 'subId1'; // Impact uses subId1; Awin uses clickref. Change per network if needed.
     function shopUrl(key, slot) {
       const p = PRODUCTS[key] || {};
+      if (p.own) return p.brandUrl;
       if (p.affiliateUrl) {
         try { const u = new URL(p.affiliateUrl); u.searchParams.set(SUBID_PARAM, slot); return u.toString(); }
         catch (e) { return p.affiliateUrl; }
@@ -409,6 +412,19 @@
         recs[1].why = 'Better motion isolation while still offering hybrid support.';
       }
 
+      // Custom Made: always shown (own brand, listed separately from the ranked picks)
+      const fit = [];
+      if (people.some(x => x.b.h)) fit.push('your height and weight');
+      if (needsZoned) fit.push('your body shape');
+      if (conditions.includes('back') || conditions.includes('joint')) fit.push('your pain points');
+      recs.push({
+        tier: 'Custom Made',
+        name: 'Chirobed by Spine Align',
+        details: 'Made to order · Handcrafted in Holland, Michigan',
+        why: 'Chiropractor-endorsed mattresses custom made to your BMI, preferences, body type and condition, from a family-owned Holland, Michigan maker (since 1913). ' + (fit.length ? 'Built around ' + fit.join(', ') + ' from your answers.' : 'Built to your body measurements and sleep needs.'),
+        product: 'chirobed', slot: 'custom', own: true, label: 'Chirobed'
+      });
+
       const recsEl = document.getElementById('recs');
       recsEl.innerHTML = recs.map(r => `
         <div class="border border-slate-200 rounded-xl p-5">
@@ -418,7 +434,8 @@
           <h4 class="font-semibold text-lg">${r.name}</h4>
           <p class="text-sm text-slate-600 mb-2">${r.details}</p>
           <p class="text-sm mb-3">${r.why}</p>
-          <a href="${shopUrl(r.product, r.slot)}" target="_blank" rel="sponsored nofollow noopener" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-lg">Shop ${(r.product.charAt(0).toUpperCase() + r.product.slice(1)).replace('Winkbed','WinkBed').replace('Brooklyn','Brooklyn Bedding')} →</a>
+          <a href="${shopUrl(r.product, r.slot)}" target="_blank" rel="${r.own ? 'noopener' : 'sponsored nofollow noopener'}" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-lg">Shop ${r.label || (r.product.charAt(0).toUpperCase() + r.product.slice(1)).replace('Winkbed','WinkBed').replace('Brooklyn','Brooklyn Bedding')} →</a>
+          ${r.own ? '<p class="text-xs text-slate-500 mt-2">SomniSmart is affiliated with Chirobed (our own brand).</p>' : ''}
         </div>
       `).join('');
 
