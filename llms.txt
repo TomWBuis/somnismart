@@ -21,6 +21,10 @@ Each recommendation shows:
 
 Some shop links may be affiliate links; picks are chosen on fit alone. SomniSmart is informational and not medical advice.
 
+## FAQ
+
+The homepage has a Frequently Asked Questions section (https://somnismart.com/#faq) covering mattress firmness, back pain (citing Kovacs et al., Lancet 2003 and Radwan et al., Sleep Health 2015), side/back/stomach sleepers, body weight, why height/waist/hips are asked, couples, hot sleepers, mattress types, organic vs natural vs certified-safe materials, replacement, sleep trials, how picks are ranked, Chirobed, and that the site is not medical advice. It is also marked up as FAQPage structured data.
+
 ## Pages
 
 - [Home / advisor](https://somnismart.com/): the questionnaire and results
