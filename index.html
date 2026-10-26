@@ -772,6 +772,154 @@
         product: 'chirobed', slot: 'custom', own: true, label: 'Chirobed'
       });
 
+      // ===== CONSTRUCTION SPECS (queen unless noted). NEVER invent numbers: unpublished = NP. =====
+      const NP = 'Not published by brand';
+      const SPECS = {
+        // Sources: https://naplab.com/mattress-reviews/winkbed-review/ ; https://www.goodbed.com/mattress-model/winkbeds-winkbed/
+        winkbed: { type: 'hybrid', layersCount: 5, layers: [
+            ['Euro pillow top (gel-infused poly foam, Tencel cover)', '2"', NP, '1.8 lb/ft³ (mfr, via NapLab)'],
+            ['Poly foam comfort layer', '2"', NP, '4.0 lb/ft³ (mfr, via NapLab)'],
+            ['Poly foam (zoned LumbarLayer)', '0.5"', NP, '2.5 lb/ft³ (mfr, via NapLab)'],
+            ['Zoned pocketed coils', '8"', '—', '—'],
+            ['Support foam base', '1"', NP, '1.5 lb/ft³ (mfr, via NapLab)']],
+          coils: { type: 'Pocketed, zoned', count: '858 (queen, per GoodBed)', gauge: '14.75 interior, 13.75 edge (mfr, via NapLab)', turns: NP, height: '8"', zoning: 'Yes (zoned coils + lumbar layer)', edge: 'Reinforced 13.75-ga perimeter coils' },
+          zoned: true, gaugeMin: 13.75 },
+        // Sources: https://naplab.com/mattress-reviews/winkbed-plus-review/ ; https://naplab.com/faqs/how-many-coils-does-a-winkbed-plus-mattress-have/
+        winkbedplus: { type: 'hybrid', layersCount: 5, layers: [
+            ['Pillow top (poly foam)', '1.5"', NP, NP], ['Poly foam', '2"', NP, NP], ['Poly foam', '2"', NP, NP],
+            ['Pocketed coils', '8"', '—', '—'], ['Support foam', '1"', NP, NP]],
+          coils: { type: 'Pocketed', count: '1,074 (queen, per NapLab)', gauge: '15/16 interior, 13.75 edge (per NapLab)', turns: NP, height: '8"', zoning: NP, edge: '13.75-ga perimeter coils' },
+          zoned: false, gaugeMin: 13.75 },
+        // Sources: https://naplab.com/mattress-reviews/helix-midnight-luxe-review/ (current specs Sept 2026) ; https://helixsleep.com/products/midnight-luxe
+        helix: { type: 'hybrid', layersCount: 6, layers: [
+            ['Quilted pillow top (TENCEL or GlacioTex cover)', '1"', NP, '1.5 lb/ft³'],
+            ['Copper gel memory foam', '0.75"', NP, '1.8 lb/ft³'],
+            ['High-density memory foam (SupremeSupport)', '2"', NP, '4.0 lb/ft³'],
+            ['Responsive poly transition foam', '1"', NP, '1.8 lb/ft³'],
+            ['Zoned pocketed coils (lumbar zone)', '8"', '—', '—'],
+            ['DuraDense base foam', '1"', NP, '1.4 lb/ft³']],
+          coils: { type: 'Pocketed, zoned', count: 'Up to 1,000 (brand); 852 queen per Macy\'s listing', gauge: '13.5 center, 14.75 head/foot, 15.5 edge (mfr, via NapLab)', turns: NP, height: '8"', zoning: 'Yes, reinforced under hips', edge: 'Reinforced perimeter' },
+          zoned: true, gaugeMin: 13.5 },
+        // Sources: https://brooklynbedding.com/products/signature-hybrid ; https://naplab.com/mattress-reviews/brooklyn-bedding-signature-hybrid-review/
+        brooklyn: { type: 'hybrid', layersCount: 7, layers: [
+            ['GlacioTex cooling cover', '—', '—', '—'],
+            ['Quilt foam', '0.75"', NP, NP], ['Quilt foam', '0.75"', NP, NP],
+            ['Gel swirl memory foam', '1"', NP, '2.4 lb/ft³ (mfr, via NapLab)'],
+            ['VX 2.5 responsive poly foam', '1"', NP, '2.5 lb/ft³ (brand)'],
+            ['VariFlex transition foam', '1"', NP, NP],
+            ['Ascension X pocketed coils', '8"', '—', '—'],
+            ['Supportive base foam', '0.75"', NP, '1.4 lb/ft³ (mfr, via NapLab)']],
+          coils: { type: 'Pocketed (encased)', count: 'Up to 760 (brand; queen count not stated)', gauge: '15.5 inner, 14.75 outer (mfr, via NapLab)', turns: NP, height: '8"', zoning: 'Not zoned (per NapLab)', edge: 'Stronger outer coils' },
+          zoned: false, gaugeMin: 14.75, note: '7 layers without pillowtop (13.25"), 8 with pillowtop (14"). Cover listed for reference.' },
+        // Sources: https://saatvahelp.saatva.com/hc/en-us/articles/11914686059543-What-are-the-Saatva-Classic-specs ; https://www.saatva.com/llms-full.txt
+        saatvaclassic: { type: 'innerspring', layersCount: NP, layers: [
+            ['Euro pillow top (organic cotton cover)', NP, NP, NP],
+            ['Memory foam lumbar layer', NP, NP, NP],
+            ['Individually wrapped comfort coils', NP, '—', '—'],
+            ['Tempered steel coil support base', NP, '—', '—']],
+          coils: { type: 'Dual coil: pocketed comfort coils over steel base unit', count: '1,300 queen (884 wrapped + 416 base)', gauge: '14.5 comfort coils, 13 base coils', turns: NP, height: NP + ' (mattress 11.5" or 14.5")', zoning: 'Lumbar zone (firmer quilting, memory foam, reinforced wire)', edge: NP },
+          zoned: true, gaugeMin: 13 },
+        // Sources: https://www.leesa.com/products/sapira-chill-mattress ; https://www.goodbed.com/mattress-model/leesa-sapira-chill-hybrid-medium-firm/
+        leesa: { type: 'hybrid', layersCount: 7, layers: [
+            ['Ultra Cool Cover', '—', '—', '—'],
+            ['Quilt foam (gel-infused)', '2"', NP, NP],
+            ['GreenFlex BioFoam', '1.5"', NP, '3 lb/ft³ (brand)'],
+            ['Responsive foam', '1"', NP, NP],
+            ['Transition support foam', '1"', NP, NP],
+            ['Zoned pocketed springs', '8"', '—', '—'],
+            ['Support foam base', '0.75"', NP, NP]],
+          coils: { type: 'Pocketed, zoned', count: 'Up to 1,032 (brand; GoodBed lists 840 for medium-firm)', gauge: NP + ' (edges are heavier gauge)', turns: NP, height: '8"', zoning: 'Yes, reinforced under hips', edge: 'Heavier-gauge perimeter' },
+          zoned: true, gaugeMin: null, note: 'Brand calls this 7-layer construction (Sapira Chill, 14").' },
+        // Sources: https://help.avocadogreenmattress.com/en/articles/4649976 ; https://help.avocadogreenmattress.com/en/articles/4649953
+        avocado: { type: 'latex hybrid', layersCount: '5 (standard) / 6 (pillow-top)', layers: [
+            ['Organic cotton cover + organic wool', NP, '—', '—'],
+            ['Organic Dunlop latex (pillow-top versions only)', '2"', '14–19', 'D65 (brand grade)'],
+            ['Organic Dunlop latex comfort layer', '2"', '14–19', 'D65 (brand grade)'],
+            ['7-zone pocketed coils (recycled steel)', '8"', '—', '—'],
+            ['Organic Dunlop latex base', '1"', '14–19', 'D65 (brand grade)']],
+          coils: { type: 'Pocketed, patented 7-zone', count: '1,081 queen (Medium/Plush); 1,049 queen (Firm)', gauge: '14 (hip/head/foot), 15 (shoulders/legs), 16 high-tensile (borders & transition)', turns: '5.5 (main coils)', height: '8"', zoning: '7 zones', edge: 'Reinforced on all four sides' },
+          zoned: true, gaugeMin: 14 },
+        // Sources: https://saatvahelp.saatva.com/hc/en-us/articles/11914347698711-What-are-the-Latex-Hybrid-product-specs
+        saatvalatex: { type: 'latex hybrid', layersCount: NP, layers: [
+            ['Organic cotton cover with organic wool', NP, '—', '—'],
+            ['5-zone natural latex', '3"', '22–23', NP],
+            ['Pocketed coils', NP, '—', '—']],
+          coils: { type: 'Pocketed (Caliper Edge)', count: '789 queen', gauge: '14.5 center, 13.75 head/foot edges', turns: NP, height: NP, zoning: '5-zone latex', edge: '13.75-ga edge support coils' },
+          zoned: true, gaugeMin: 13.75, note: 'Mattress height 12".' },
+        // Sources: https://www.tuck.com/mattress-reviews/zenhaven-mattress-review/ ; https://sleepdoctor.com/pages/reviews/zenhaven-mattress-review
+        zenhaven: { type: 'all-latex', layersCount: '4 latex layers (flippable)', layers: [
+            ['Natural latex comfort, Luxury Plush side', '1.5"', '14–19 (reviewer)', NP],
+            ['Natural latex core', '3"', '25–29 (reviewer)', NP],
+            ['Natural latex core', '3"', '30–34 (reviewer)', NP],
+            ['Natural latex comfort, Gentle Firm side', '1.5"', '20–24 (reviewer)', NP]],
+          coils: null, zoned: true, gaugeMin: null, note: '10" total. Latex type reported as Talalay in older reviews, Dunlop in newer ones; confirm with Saatva.' },
+        // Sources: https://birchliving.com/products/birch-natural-organic-mattress ; https://sleepsage.com/reviews/birch-natural-mattress
+        birch: { type: 'latex hybrid', layersCount: NP, layers: [
+            ['Organic cotton cover', '—', '—', '—'],
+            ['Natural wool', NP, '—', '—'],
+            ['Natural latex (GOLS)', '2" (reviewer)', NP, NP],
+            ['Pocketed coils', '8"', '—', '—'],
+            ['Wool base', NP, '—', '—']],
+          coils: { type: 'Pocketed', count: '852 queen (retailer listing; not on brand page)', gauge: '14.5 (retailer listing)', turns: NP, height: '8"', zoning: NP, edge: NP },
+          zoned: false, gaugeMin: 14.5, note: '11" total.' },
+        // chirobed.com publishes no layer/coil specs
+        chirobed: { custom: true }
+      };
+      const specRows = (s) => {
+        if (!s) return '<p class="text-xs text-slate-500">Specs not available.</p>';
+        if (s.custom) return '<p class="text-xs text-slate-600">Contact Chirobed for build specs — each mattress is made to order for your measurements.</p>';
+        const layerRows = s.layers.map((l, i) => `<tr><td class="pr-2">${i + 1}</td><td class="pr-2">${l[0]}</td><td class="pr-2">${l[1]}</td><td class="pr-2">${l[2]}</td><td>${l[3]}</td></tr>`).join('');
+        const c = s.coils;
+        const coilHtml = c ? `<p class="mt-2"><strong>Coils:</strong> ${c.type} · Count: ${c.count} · Gauge: ${c.gauge} · Turns: ${c.turns} · Coil height: ${c.height} · Zoning: ${c.zoning} · Edge: ${c.edge}</p>` : '<p class="mt-2"><strong>Coils:</strong> None (all-latex)</p>';
+        return `<p><strong>Layers:</strong> ${s.layersCount}</p>
+          <table class="w-full text-left mt-1"><thead><tr class="text-slate-500"><th>#</th><th>Material (top → bottom)</th><th>Thick.</th><th>ILD</th><th>Density</th></tr></thead><tbody>${layerRows}</tbody></table>
+          ${coilHtml}${s.note ? `<p class="mt-1 text-slate-500">${s.note}</p>` : ''}`;
+      };
+      // ===== YOUR IDEAL MATTRESS (guideline ranges from general sleep-science guidance, NOT product specs) =====
+      const firmNum = { 'medium': '5–6', 'medium to medium-firm': '5–6.5', 'medium-firm': '6–7', 'medium-firm to firm': '6.5–7.5', 'firm': '7–8' }[firmness] || '6–7';
+      const heavy = avgWeight > 230 || avgWeightFirmFlag;
+      const light = avgWeight && avgWeight < 130;
+      const ideal = {
+        construction: material === 'organic' || material === 'natural' ? 'Latex hybrid (natural/organic latex over pocketed coils) or all-latex'
+          : (bounce === 'isolated' ? 'Hybrid with memory-foam comfort layers (or all-foam)' : 'Hybrid (foam or latex comfort over pocketed coils)'),
+        comfort: heavy ? '2–4 comfort layers, about 3–4" total, high-density' : (position === 'side' || light ? '2–4 comfort layers, about 3–5" total, softer top' : '2–3 comfort layers, about 2–4" total'),
+        ild: position === 'side' || light ? 'about 10–19 (soft–medium) top layer' : (heavy || position === 'stomach' ? 'about 19–30 (medium–firm)' : 'about 14–24 (medium)'),
+        density: heavy ? 'memory foam 4+ lb/ft³, poly foam 1.8+ lb/ft³' : 'memory foam 3+ lb/ft³, poly foam 1.5–1.8+ lb/ft³',
+        coils: heavy ? '8"+ pocketed coils, lower (thicker) gauge about 13–14 in center, reinforced edge' : '6–8" pocketed coils, about 13.5–15 gauge',
+        zoning: needsZoned || conditions.includes('back') ? 'Recommended (firmer under hips, softer at shoulders)' : 'Helpful but optional',
+        cooling: conditions.includes('hot') ? 'Prioritize: coils for airflow, latex or gel/copper foams, cooling cover' : 'Standard',
+        motion: bounce === 'isolated' ? 'High: pocketed coils plus memory foam' : (bounce === 'responsive' ? 'Lower priority: favor responsive latex or poly foam' : 'Moderate: pocketed coils'),
+        material: { organic: 'GOTS/GOLS-certified organic', natural: 'Natural latex, wool, cotton (no polyurethane foam)', safe: 'CertiPUR-US foams, GREENGUARD Gold', none: 'No preference' }[material] || 'No preference'
+      };
+      let idealEl = document.getElementById('ideal');
+      if (!idealEl) { idealEl = document.createElement('div'); idealEl.id = 'ideal'; reasoningEl.parentNode.insertBefore(idealEl, reasoningEl); }
+      idealEl.className = 'border-2 border-indigo-200 bg-indigo-50 rounded-xl p-5 mb-6';
+      idealEl.innerHTML = `<h4 class="font-semibold text-lg mb-2">Your ideal mattress</h4>
+        <ul class="text-sm space-y-1">
+          <li><strong>Target firmness:</strong> ${firmNum} / 10 (${firmness})</li>
+          <li><strong>Construction:</strong> ${ideal.construction}</li>
+          <li><strong>Comfort layers:</strong> ${ideal.comfort}</li>
+          <li><strong>Comfort-layer ILD:</strong> ${ideal.ild}</li>
+          <li><strong>Foam density:</strong> ${ideal.density}</li>
+          <li><strong>Coils (if hybrid):</strong> ${ideal.coils}</li>
+          <li><strong>Zoning:</strong> ${ideal.zoning}</li>
+          <li><strong>Cooling:</strong> ${ideal.cooling}</li>
+          <li><strong>Motion isolation:</strong> ${ideal.motion}</li>
+          <li><strong>Materials:</strong> ${ideal.material}</li>
+        </ul>
+        <p class="text-xs text-slate-500 mt-2">These are guideline ranges from general sleep-science guidance, not product specs. The picks below are ranked by how close they come.</p>`;
+      const matchNote = (s) => {
+        if (!s || s.custom) return 'Built to order, so it can be made to this ideal. Ask Chirobed to match these targets.';
+        const n = [];
+        const wantLatex = material === 'organic' || material === 'natural';
+        n.push(s.type.includes('latex') ? (wantLatex ? '✓ latex build matches your material preference' : 'latex build') : (wantLatex ? '✗ uses foams, not your natural/organic preference' : '✓ ' + s.type + ' construction'));
+        if (needsZoned || conditions.includes('back')) n.push(s.zoned ? '✓ zoned support' : '✗ no published zoning');
+        if (heavy) n.push(s.gaugeMin && s.gaugeMin <= 14 ? '✓ heavy-gauge coils (' + s.gaugeMin + ')' : (s.gaugeMin ? '~ lightest-load coils ' + s.gaugeMin + ' ga' : '~ coil gauge not published'));
+        if (bounce === 'isolated') n.push(/memory/i.test(JSON.stringify(s.layers)) ? '✓ memory foam for motion isolation' : '~ less motion isolation than memory foam');
+        return n.join(' · ');
+      };
+      const specKey = (r) => r.product === 'chirobed' ? 'chirobed' : /Plus/.test(r.name) ? 'winkbedplus' : /Classic/.test(r.name) ? 'saatvaclassic'
+        : /Zenhaven/.test(r.name) ? 'zenhaven' : /Latex Hybrid/.test(r.name) ? 'saatvalatex' : r.product;
       const recsEl = document.getElementById('recs');
       recsEl.innerHTML = recs.map(r => `
         <div class="border border-slate-200 rounded-xl p-5">
@@ -782,9 +930,11 @@
           <p class="text-sm text-slate-600 mb-2">${r.details}</p>
           <p class="text-sm mb-3">${r.why}</p>
           <a href="${shopUrl(r.product, r.slot)}" target="_blank" rel="${r.own ? 'noopener' : 'sponsored nofollow noopener'}" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-lg">Shop ${r.label || (r.product.charAt(0).toUpperCase() + r.product.slice(1)).replace('Winkbed','WinkBed').replace('Brooklyn','Brooklyn Bedding')} →</a>
+          <p class="text-xs bg-slate-50 rounded p-2 mt-3"><strong>How close it matches:</strong> ${matchNote(SPECS[specKey(r)])}</p>
+          <details class="mt-2 text-xs"><summary class="cursor-pointer text-indigo-600 font-medium">Full specs</summary><div class="mt-2 overflow-x-auto">${specRows(SPECS[specKey(r)])}</div></details>
           ${r.own ? '<p class="text-xs text-slate-500 mt-2">SomniSmart is affiliated with Chirobed (our own brand).</p>' : ''}
         </div>
-      `).join('');
+      `).join('') + '<p class="text-xs text-slate-500 md:col-span-2">Specs come from manufacturer pages and independent reviewers (NapLab, GoodBed, Sleep Doctor, retailer listings), are for queen size unless noted, and may vary by size, firmness and model year. "Not published by brand" means we could not find a public figure.</p>';
 
       document.getElementById('results').classList.remove('hidden');
       document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
