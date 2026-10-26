@@ -1,0 +1,30 @@
+# SomniSmart
+
+> SomniSmart (https://somnismart.com) is a free, science-based mattress advisor. Visitors answer a few questions and get a transparent shortlist of currently available mattresses, ranked only by matching rules — not by commission.
+
+## How it works
+
+- Starts from medium-firm (about 6/10), the evidence-based default for most adults.
+- Adjusts for body weight and BMI (from height and weight): higher BMI shifts firmer toward thicker, higher-density models; lower BMI leans softer.
+- Adjusts for sleep position: side softer for shoulder/hip pressure relief, back medium-firm, stomach firmer, combination medium to medium-firm.
+- Adjusts for body shape: curvy hips with a narrow waist cap firmness at medium-firm with a softer comfort layer or zoned support; broad-shouldered side sleepers get extra shoulder pressure relief.
+- Considers conditions such as back or joint pain, sleeping hot, and motion isolation, and can take answers for both you and a partner.
+
+## Results
+
+Each recommendation shows:
+1. Best science match
+2. Most practical
+3. Best value
+4. Custom Made — always Chirobed by Spine Align (https://chirobed.com), made-to-order mattresses. Chirobed is SomniSmart's own brand, and this is disclosed on the site.
+
+Some shop links may be affiliate links; picks are chosen on fit alone. SomniSmart is informational and not medical advice.
+
+## Pages
+
+- [Home / advisor](https://somnismart.com/): the questionnaire and results
+- [About](https://somnismart.com/about.html): what SomniSmart is and how recommendations work
+- [Affiliate Disclosure](https://somnismart.com/disclosure.html): how the site earns money and the Chirobed own-brand disclosure
+- [Disclaimer](https://somnismart.com/disclaimer.html): not medical advice
+- [Privacy Policy](https://somnismart.com/privacy.html)
+- [Contact](https://somnismart.com/contact.html): hello@somnismart.com
