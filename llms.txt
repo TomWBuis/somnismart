@@ -1,8 +1,15 @@
 # SomniSmart
 
-> SomniSmart (https://somnismart.com) is a free, science-based mattress advisor. Visitors answer a few questions and get a transparent shortlist of currently available mattresses, ranked only by matching rules — not by commission.
+> SomniSmart (https://somnismart.com) is a free, science-based sleep product advisor. It covers four areas: mattresses, pillows, sleep accessories and evidence-based sleep nutrition. Visitors answer a few questions and get a transparent shortlist of currently available products, ranked only by matching rules — not by commission.
 
-## How it works
+## Advisors
+
+- [Mattress Advisor](https://somnismart.com/mattresses.html): shows the ideal mattress design first (firmness, construction, coil and foam specs), then real mattresses ranked by closeness, with partner support and a Chirobed by Spine Align custom-made option.
+- [Pillow Advisor](https://somnismart.com/pillows.html): calculates an ideal pillow loft (inches), firmness, fill and shape (including cervical) from sleep position, shoulder width or neck-to-shoulder measurement, weight, mattress firmness, neck pain and cooling needs, then ranks real pillows (Coop, TEMPUR, Avocado, Saatva, Purple, Brooklinen) plus Spine Align's sized Therapeutica cervical pillow.
+- [Sleep Accessories Advisor](https://somnismart.com/accessories.html): recommends accessory types (bed cooling/heating including dual-zone for couples, cooling sheets, weighted blankets, white noise, sleep masks) for hot or cold sleepers, partner temperature mismatch, night sweats, noise, light and anxiety, then real products (Eight Sleep, Sleepme Chilipad, BedJet, Buffy, Bearaby, Hatch, LectroFan, Manta).
+- [Sleep Nutrition Guide](https://somnismart.com/nutrition.html): education, not medical advice, citing NIH (ODS, NCCIH) and AASM sources on magnesium glycinate, low-dose melatonin, tart cherry, glycine, L-theanine, caffeine timing and alcohol, with USP Verified / NSF Certified for Sport product examples.
+
+## Mattress advisor rules
 
 - Starts from medium-firm (about 6/10), the evidence-based default for most adults.
 - Adjusts for body weight and BMI (from height and weight): higher BMI shifts firmer toward thicker, higher-density models; lower BMI leans softer.
@@ -11,23 +18,27 @@
 - Considers conditions such as back or joint pain, sleeping hot, and motion isolation, and can take answers for both you and a partner.
 - Material preference: Organic swaps in GOTS/GOLS-certified models (Avocado Green, Saatva Latex Hybrid or Zenhaven, Birch Natural); Natural swaps in natural latex/wool/cotton models with no polyurethane foam; Commonly accepted as safe keeps the standard picks and lists their CertiPUR-US / GREENGUARD Gold certifications. Firmness and body rules still apply.
 
-## Results
+## Mattress results
 
-Each recommendation shows:
+Each mattress recommendation shows:
 1. Best science match
 2. Most practical
 3. Best value
 4. Custom Made — always Chirobed by Spine Align (https://chirobed.com), made-to-order mattresses. Chirobed is SomniSmart's own brand, and this is disclosed on the site.
 
-Some shop links may be affiliate links; picks are chosen on fit alone. SomniSmart is informational and not medical advice.
+Some shop links may be affiliate links; picks are chosen on fit alone. SomniSmart is informational and not medical advice; the nutrition guide in particular tells readers to consult a doctor before taking supplements, especially if pregnant, on medications, or for children.
 
 ## FAQ
 
-The homepage has a Frequently Asked Questions section (https://somnismart.com/#faq) covering mattress firmness, back pain (citing Kovacs et al., Lancet 2003 and Radwan et al., Sleep Health 2015), side/back/stomach sleepers, body weight, why height/waist/hips are asked, couples, hot sleepers, mattress types, organic vs natural vs certified-safe materials, replacement, sleep trials, how picks are ranked, Chirobed, and that the site is not medical advice. It is also marked up as FAQPage structured data.
+The homepage has a Frequently Asked Questions section (mattress-focused) (https://somnismart.com/#faq) covering mattress firmness, back pain (citing Kovacs et al., Lancet 2003 and Radwan et al., Sleep Health 2015), side/back/stomach sleepers, body weight, why height/waist/hips are asked, couples, hot sleepers, mattress types, organic vs natural vs certified-safe materials, replacement, sleep trials, how picks are ranked, Chirobed, and that the site is not medical advice. It is also marked up as FAQPage structured data.
 
 ## Pages
 
-- [Home / advisor](https://somnismart.com/): the questionnaire and results
+- [Home](https://somnismart.com/): overview of all four advisors and the FAQ
+- [Mattresses](https://somnismart.com/mattresses.html)
+- [Pillows](https://somnismart.com/pillows.html)
+- [Sleep Accessories](https://somnismart.com/accessories.html)
+- [Sleep Nutrition](https://somnismart.com/nutrition.html)
 - [About](https://somnismart.com/about.html): what SomniSmart is and how recommendations work
 - [Affiliate Disclosure](https://somnismart.com/disclosure.html): how the site earns money and the Chirobed own-brand disclosure
 - [Disclaimer](https://somnismart.com/disclaimer.html): not medical advice
