@@ -9,6 +9,19 @@
 - [Sleep Accessories Advisor](https://somnismart.com/accessories.html): recommends accessory types (bed cooling/heating including dual-zone for couples, cooling sheets, weighted blankets, white noise, sleep masks) for hot or cold sleepers, partner temperature mismatch, night sweats, noise, light and anxiety, then real products (Eight Sleep, Sleepme Chilipad, BedJet, Buffy, Bearaby, Hatch, LectroFan, Manta).
 - [Sleep Nutrition Guide](https://somnismart.com/nutrition.html): education, not medical advice, citing NIH (ODS, NCCIH) and AASM sources on magnesium glycinate, low-dose melatonin, tart cherry, glycine, L-theanine, caffeine timing and alcohol, plus practitioner sleep formulas. Product examples are limited to clinical-grade brands sold through healthcare professionals (Metagenics, Biotics Research, Standard Process/MediHerb, Designs for Health, Xymogen, Pure Encapsulations); prices are set by the practitioner.
 
+## Guides
+
+Evidence-based articles (900–1,400 words, cited sources, Article structured data) at https://somnismart.com/guides/:
+- [Best mattress for side sleepers with hip or shoulder pain](https://somnismart.com/guides/side-sleepers-hip-shoulder-pain.html)
+- [Mattress firmness for heavy sleepers (230 lb+)](https://somnismart.com/guides/mattress-firmness-heavy-sleepers.html)
+- [Choosing a pillow loft for your neck and shoulders](https://somnismart.com/guides/pillow-loft-neck-shoulders.html)
+- [Cooling solutions for hot sleepers and couples with different temperatures](https://somnismart.com/guides/cooling-hot-sleepers-couples.html)
+- [Practitioner-grade sleep supplements: magnesium, melatonin, glycine, theanine](https://somnismart.com/guides/practitioner-grade-sleep-supplements.html) (medical disclaimer; practitioner-channel brands only)
+
+## Sharing results
+
+The mattress, pillow and accessories advisors have a "Share my results" panel (copy link, native share, X, Facebook, email). Quiz answers are encoded in the URL query string, so a shared link such as https://somnismart.com/mattresses.html?position=side&weight=180 prefills the form and re-runs the same results.
+
 ## Mattress advisor rules
 
 - Starts from medium-firm (about 6/10), the evidence-based default for most adults.
@@ -39,6 +52,7 @@ The homepage has a Frequently Asked Questions section (mattress-focused) (https:
 - [Pillows](https://somnismart.com/pillows.html)
 - [Sleep Accessories](https://somnismart.com/accessories.html)
 - [Sleep Nutrition](https://somnismart.com/nutrition.html)
+- [Guides](https://somnismart.com/guides/): evidence-based sleep guides
 - [About](https://somnismart.com/about.html): what SomniSmart is and how recommendations work
 - [Affiliate Disclosure](https://somnismart.com/disclosure.html): how the site earns money and the Chirobed own-brand disclosure
 - [Disclaimer](https://somnismart.com/disclaimer.html): not medical advice
