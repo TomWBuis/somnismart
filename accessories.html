@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SomniSmart Sleep Accessories Advisor — Bed Cooling, Weighted Blankets, White Noise</title>
+  <meta name="description" content="Free sleep accessories quiz: bed cooling and heating (Eight Sleep, BedJet, Sleepme Chilipad), cooling sheets, weighted blankets, white noise machines and sleep masks matched to your sleep problems and budget.">
+  <link rel="canonical" href="https://somnismart.com/accessories.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SomniSmart">
+  <meta property="og:title" content="SomniSmart Sleep Accessories Advisor — Bed Cooling, Weighted Blankets, White Noise">
+  <meta property="og:description" content="Free sleep accessories quiz: bed cooling and heating (Eight Sleep, BedJet, Sleepme Chilipad), cooling sheets, weighted blankets, white noise machines and sleep masks matched to your sleep problems and budget.">
+  <meta property="og:url" content="https://somnismart.com/accessories.html">
+  <meta property="og:image" content="https://somnismart.com/assets/mascot-robot.svg">
+  <meta property="og:image:alt" content="SomniSmart mascot robot hugging a pillow">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SomniSmart Sleep Accessories Advisor — Bed Cooling, Weighted Blankets, White Noise">
+  <meta name="twitter:description" content="Free sleep accessories quiz: bed cooling and heating (Eight Sleep, BedJet, Sleepme Chilipad), cooling sheets, weighted blankets, white noise machines and sleep masks matched to your sleep problems and budget.">
+  <meta name="twitter:image" content="https://somnismart.com/assets/mascot-robot.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SomniSmart Sleep Accessories Advisor",
+  "url": "https://somnismart.com/accessories.html",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free sleep accessories quiz: bed cooling and heating systems, cooling sheets, weighted blankets, white noise machines and sleep masks matched to whether you sleep hot or cold, partner temperature differences, night sweats, noise, light and anxiety.",
+  "publisher": { "@id": "https://somnismart.com/#org" }
+}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system_ui, sans-serif; }
+    .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Shared site nav -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50" aria-label="Main">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">S</div>
+        <span class="font-semibold text-lg">SomniSmart</span>
+      </a>
+      <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm">
+        <a href="index.html" class="hover:text-indigo-600 whitespace-nowrap">Home</a>
+        <a href="mattresses.html" class="hover:text-indigo-600 whitespace-nowrap">Mattresses</a>
+        <a href="pillows.html" class="hover:text-indigo-600 whitespace-nowrap">Pillows</a>
+        <a href="accessories.html" class="text-indigo-600 font-semibold whitespace-nowrap" aria-current="page">Accessories</a>
+        <a href="nutrition.html" class="hover:text-indigo-600 whitespace-nowrap">Nutrition</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-gradient text-white py-14 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-indigo-300 text-sm font-medium tracking-wide uppercase mb-3">Sleep Accessories Advisor</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Fix what keeps you awake.</h1>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto">Too hot, too cold, a partner on a different thermostat, noise, light or a racing mind. Tell us what gets in the way and we’ll show the type of accessory that addresses it first, then real products currently sold by their brands.</p>
+      <a href="#start" class="inline-block mt-6 bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-8 py-3 rounded-lg">Start accessories quiz</a>
+    </div>
+  </section>
+
+  <section id="start" class="py-14 px-4 bg-slate-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">What gets in the way of your sleep?</h2>
+      <form id="accForm" class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 space-y-5">
+        <div class="grid md:grid-cols-2 gap-5">
+          <label class="block"><span class="font-medium">In bed I usually feel</span>
+            <select id="aTemp" class="w-full border border-slate-300 rounded-lg px-3 py-2 mt-1">
+              <option value="hot">Too hot</option><option value="cold">Too cold</option><option value="both">Hot some nights, cold others</option><option value="fine" selected>Temperature is fine</option>
+            </select></label>
+          <label class="block"><span class="font-medium">Budget for this</span>
+            <select id="aBudget" class="w-full border border-slate-300 rounded-lg px-3 py-2 mt-1">
+              <option value="100">Under $100</option><option value="350" selected>Up to $350</option><option value="1200">Up to $1,200</option><option value="99999">Whatever works best</option>
+            </select></label>
+          <label class="block"><span class="font-medium">Your weight (lb, optional, for weighted blanket sizing)</span>
+            <input id="aWeight" type="number" min="60" max="500" class="w-full border border-slate-300 rounded-lg px-3 py-2 mt-1" placeholder="e.g. 160"></label>
+        </div>
+        <fieldset class="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+          <legend class="font-medium mb-1">Tick all that apply</legend>
+          <label class="flex items-center gap-2"><input type="checkbox" id="aPartner"> My partner and I want different temperatures</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="aSweats"> Night sweats / hot flashes (e.g. menopause)</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="aNoise"> Noise wakes me or keeps me up</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="aLight"> Light bothers me (early sun, streetlights, shift work)</label>
+          <label class="flex items-center gap-2"><input type="checkbox" id="aAnxiety"> Racing mind / anxiety at bedtime</label>
+        </fieldset>
+        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 rounded-lg">Show my accessories</button>
+      </form>
+
+      <div id="results" class="hidden mt-10">
+        <h3 class="text-2xl font-bold mb-2">Your accessory plan</h3>
+        <p class="text-sm text-slate-500 mb-6">Some links are affiliate links; they never change which products appear or their order. <a href="disclosure.html" class="underline">Disclosure</a>.</p>
+        <div id="aTypes"></div>
+        <div id="aRecs" class="space-y-5 mt-6"></div>
+        <p class="text-xs text-slate-500 mt-6">Prices and specs from each brand’s official page, checked Oct 2026; sale prices change often. Night sweats, loud snoring, gasping or insomnia lasting months can have medical causes; talk to a doctor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 px-4 bg-white">
+    <div class="max-w-3xl mx-auto text-sm text-slate-600 space-y-3">
+      <h2 class="text-2xl font-bold text-slate-800">Why these work</h2>
+      <p><strong>Temperature:</strong> your core body temperature drops as you fall asleep, and a bed that is too warm makes that harder. Active systems pump water (Eight Sleep, Sleepme Chilipad) or blow air (BedJet) to cool or warm the bed; dual-zone setups let each partner pick their own side.</p>
+      <p><strong>Weighted blankets:</strong> a randomized controlled trial in adults with insomnia and psychiatric disorders found weighted chain blankets reduced insomnia severity versus a light control blanket (<a class="underline" href="https://doi.org/10.5664/jcsm.8636" target="_blank" rel="noopener">Ekholm et al., J Clin Sleep Med 2020</a>). Evidence in other groups is limited. Not for infants or young children, and check with a doctor if you have breathing, circulation or mobility problems.</p>
+      <p><strong>Noise and light:</strong> steady sound masks sudden noises; a blackout mask blocks light that can wake you early or disrupt sleep during the day for shift workers.</p>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 text-slate-400 py-8 px-4 text-center text-sm">
+    <p class="mb-2">SomniSmart · Science-based sleep product matching powered by Grok</p>
+    <p>Free for visitors. Ranked only by matching rules. Affiliate links do not influence recommendations.</p>
+    <p class="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
+      <a href="index.html" class="hover:text-white">Home</a>
+      <a href="mattresses.html" class="hover:text-white">Mattresses</a>
+      <a href="pillows.html" class="hover:text-white">Pillows</a>
+      <a href="accessories.html" class="hover:text-white">Accessories</a>
+      <a href="nutrition.html" class="hover:text-white">Nutrition</a>
+    </p>
+    <p class="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1">
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="disclosure.html" class="hover:text-white">Affiliate disclosure</a>
+      <a href="privacy.html" class="hover:text-white">Privacy policy</a>
+      <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      <a href="contact.html" class="hover:text-white">Contact</a>
+    </p>
+    <p class="mt-4 text-slate-500">© 2026 SomniSmart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ===================== AFFILIATE LINKS: PASTE HERE =====================
+    // Paste an approved tracking link into affiliateUrl; leave '' until approved
+    // (the button then links to the brand's official page, brandUrl, with no tracking).
+    // A subId (best / practical / value) is added automatically to affiliate links.
+    // Affiliate links NEVER change which products are recommended or their order.
+    // =========================================================================
+    const PRODUCTS = {
+      eightsleep:  { brandUrl: 'https://www.eightsleep.com/product/pod-cover/', affiliateUrl: '' },
+      sleepme:     { brandUrl: 'https://sleep.me/product/chilipad', affiliateUrl: '' },
+      bedjet:      { brandUrl: 'https://bedjet.com/products/bedjet-3-climate-comfort-system-with-biorhythm-sleep-technology', affiliateUrl: '' },
+      bedjetdual:  { brandUrl: 'https://bedjet.com/products/bedjet-3-dual-zone-climate-comfort-system-for-couples', affiliateUrl: '' },
+      buffy:       { brandUrl: 'https://buffy.co/products/breeze-sheets', affiliateUrl: '' },
+      bearaby:     { brandUrl: 'https://bearaby.com/products/the-napper', affiliateUrl: '' },
+      hatch:       { brandUrl: 'https://www.hatch.co/restore', affiliateUrl: '' },
+      lectrofan:   { brandUrl: 'https://www.lectrofan.com/products/lectrofan-evo', affiliateUrl: '' },
+      manta:       { brandUrl: 'https://mantasleep.com/products/manta-sleep-mask', affiliateUrl: '' }
+    };
+    const SUBID_PARAM = 'subId1';
+    function shopUrl(key, slot) {
+      const p = PRODUCTS[key] || {};
+      if (p.own) return p.brandUrl;
+      if (p.affiliateUrl) {
+        try { const u = new URL(p.affiliateUrl); u.searchParams.set(SUBID_PARAM, slot); return u.toString(); }
+        catch (e) { return p.affiliateUrl; }
+      }
+      return p.brandUrl || '#';
+    }
+
+    // Real products, verified on each brand's official page (Oct 2026).
+    const ITEMS = {
+      eightsleep: { name: 'Eight Sleep Pod 6 (cover + hub)', type: 'climate', price: 2299, priceText: 'From about $2,298 sale / $2,899 list for the cover + hub; bundles cost more',
+        specs: 'Water-based cover fitted over your mattress; each side set independently from 55°F to 110°F; app control and sleep tracking (subscription offered).', dual: true, heats: true },
+      sleepme: { name: 'Sleepme Chilipad 2.0', type: 'climate', price: 1599, priceText: 'Starts at $1,599 (Sleepme lists other Chilipad models from $699)',
+        specs: 'Water-based mattress pad cools or warms 55°F–115°F. Ask Sleepme about dual-zone options for couples.', dual: false, heats: true },
+      bedjet: { name: 'BedJet 3 Climate Comfort System', type: 'climate', price: 498, priceText: '$498 sale / $699 regular', specs: 'Air-based: blows cooled or warmed air under your sheets. Cools to room temperature (it is not an air conditioner) and heats. Biorhythm programs.', dual: false, heats: true },
+      bedjetdual: { name: 'BedJet 3 Dual Zone System for Couples', type: 'climate', price: 969, priceText: '$969 sale / $1,549 regular (queen)', specs: 'Two BedJet 3 Mini units, two remotes and a Dual Zone Cloud Sheet: each side cools or heats independently.', dual: true, heats: true },
+      buffy: { name: 'Buffy Breeze Sheet Set (TENCEL lyocell)', type: 'sheets', price: 175, priceText: '$219 regular, often about $175 on sale (queen)', specs: '100% TENCEL lyocell from eucalyptus; OEKO-TEX Standard 100 Class I; brand-tested Qmax 0.405 W/cm² (cool-to-touch).', dual: false },
+      bearaby: { name: 'Bearaby Cotton Napper weighted blanket', type: 'weighted', price: 199, priceText: '$199 (10 lb) to about $329 (25 lb)', specs: 'Hand-knitted cotton, no beads; 10, 15, 20 or 25 lb. Open knit is more breathable than bead-filled blankets.', dual: false },
+      lectrofan: { name: 'LectroFan EVO', type: 'noise', price: 65.95, priceText: '$65.95 (showed “sold out” on the brand site when checked; also sold by Amazon and other retailers)', specs: 'Non-looping fan and white/pink/brown noise sounds, sleep timer, USB powered.', dual: false },
+      hatch: { name: 'Hatch Restore 3', type: 'noise', price: 169.99, priceText: '$169.99', specs: 'Sound machine, sunrise alarm light and wind-down routines in one. Some content needs the optional Hatch+ subscription.', dual: false },
+      manta: { name: 'Manta Sleep Mask', type: 'mask', price: 39, priceText: '$39', specs: 'Adjustable, detachable eye cups that sit around (not on) the eyes; designed for full blackout.', dual: false }
+    };
+
+    function card(tier, slot, key, why, extra) {
+      const it = ITEMS[key];
+      return '<div class="bg-white border border-slate-200 rounded-2xl p-6">' +
+        '<p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">' + tier + '</p>' +
+        '<h4 class="text-lg font-bold">' + it.name + '</h4>' +
+        '<p class="text-sm text-slate-600 mt-1"><strong>' + it.priceText + '</strong></p>' +
+        '<p class="text-sm mt-2">' + why + '</p>' + (extra ? '<p class="text-sm text-slate-600 mt-1">' + extra + '</p>' : '') +
+        '<details class="mt-3"><summary class="cursor-pointer text-sm font-medium text-indigo-600">Specs</summary><p class="text-sm mt-2">' + it.specs + '</p></details>' +
+        '<a href="' + shopUrl(key, slot) + '" target="_blank" rel="sponsored noopener" class="inline-block mt-4 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-5 py-2 rounded-lg">View at brand →</a></div>';
+    }
+
+    document.getElementById('accForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const g = id => document.getElementById(id);
+      const a = { temp: g('aTemp').value, budget: parseFloat(g('aBudget').value), weight: parseFloat(g('aWeight').value) || null,
+        partner: g('aPartner').checked, sweats: g('aSweats').checked, noise: g('aNoise').checked, light: g('aLight').checked, anxiety: g('aAnxiety').checked };
+      const types = [], cards = [];
+      const over = k => ITEMS[k].price > a.budget ? ' <em class="text-amber-700">(over your budget)</em>' : '';
+      const hot = a.temp === 'hot' || a.temp === 'both' || a.sweats;
+      const cold = a.temp === 'cold' || a.temp === 'both';
+
+      if (hot || cold || a.partner) {
+        const why = [];
+        if (hot) why.push(a.sweats ? 'night sweats/hot flashes need active cooling that can pull heat away quickly' : 'you sleep hot');
+        if (cold) why.push('you sleep cold, so you want something that also heats');
+        if (a.partner) why.push('you and your partner want different temperatures, so a dual-zone system lets each side choose');
+        types.push(['Bed cooling / heating system', why.join('; ') + '.']);
+        // Best match: the strongest system for the need; practical and value by budget.
+        let best = a.partner ? 'eightsleep' : 'sleepme';
+        let practical = a.partner ? 'bedjetdual' : 'bedjet';
+        cards.push(card('Best match: bed climate', 'best', best, (a.partner ? 'Water-based, independently controlled sides (55–110°F each): the most precise way to give each partner their own temperature.' : 'Water-based pad with a 55–115°F range: strong, direct cooling or warming.') + over(best)));
+        cards.push(card('Most practical: bed climate', 'practical', practical, (a.partner ? 'Dual-zone air system: each side cools or heats on its own for less than a water system.' : 'Air-based system that cools and heats under the sheets for well under the price of water systems.') + over(practical)));
+        if (a.partner && a.budget >= 1500) cards.push(card('Alternative', 'practical', 'sleepme', 'Strong water-based cooling and warming (55–115°F); confirm dual-zone setup with Sleepme for couples.' + over('sleepme')));
+      }
+      if (hot) {
+        types.push(['Cooling sheets', 'breathable, cool-to-touch fabric is the cheapest first step for hot sleepers.']);
+        cards.push(card('Best value: cooling', 'value', 'buffy', 'TENCEL lyocell wicks moisture and feels cool; OEKO-TEX Class I certified. Pair with a breathable mattress protector.' + over('buffy')));
+      }
+      if (a.anxiety) {
+        let wt = '';
+        if (a.weight) { const w = a.weight * 0.1; const opts = [10, 15, 20, 25]; const pick = opts.reduce((p, c) => Math.abs(c - w) < Math.abs(p - w) ? c : p); wt = 'About 10% of your body weight is the usual guide (Bearaby’s too): the ' + pick + ' lb Napper is the closest size.'; }
+        types.push(['Weighted blanket', 'deep pressure can feel calming; one randomized trial found weighted blankets reduced insomnia severity in adults with psychiatric disorders.']);
+        cards.push(card('Best match: calm', 'best', 'bearaby', 'Knitted cotton, no plastic beads, and an open weave that breathes better' + (hot ? ', which matters because you also sleep hot.' : '.') + over('bearaby'), wt));
+      }
+      if (a.noise) {
+        types.push(['White noise machine', 'steady, non-looping sound masks sudden noises (traffic, snoring, neighbours).']);
+        cards.push(card('Best value: noise', 'value', 'lectrofan', 'Non-looping sound so your brain does not pick up a repeat pattern; simple and inexpensive.' + over('lectrofan')));
+        cards.push(card(a.light ? 'Best match: noise + light' : 'Most practical: noise', a.light ? 'best' : 'practical', 'hatch', 'Combines a sound machine with a sunrise alarm light' + (a.light ? ', so you can sleep in the dark and wake to gradual light.' : '.') + over('hatch')));
+      }
+      if (a.light) {
+        types.push(['Blackout sleep mask', 'blocks early sunlight, streetlights and daytime light for shift work.']);
+        cards.push(card('Best match: light', 'best', 'manta', 'Eye cups sit around your eyes so there is no pressure on your eyelids, and they can be moved to block all light.' + over('manta')));
+      }
+      if (!types.length) {
+        types.push(['Start with the basics', 'no specific problem ticked: a cool (about 60–67°F is commonly suggested), dark, quiet room and a consistent schedule matter most.']);
+        cards.push(card('Best value: comfort', 'value', 'buffy', 'Breathable cooling sheets are a low-cost upgrade for most sleepers.' + over('buffy')));
+      }
+      g('aTypes').innerHTML = '<div class="bg-indigo-50 border border-indigo-200 rounded-2xl p-6"><h4 class="text-xl font-bold mb-3">Recommended accessory types</h4><ol class="list-decimal pl-5 space-y-2 text-sm">' +
+        types.map(t => '<li><strong>' + t[0] + '</strong>: ' + t[1] + '</li>').join('') + '</ol>' +
+        (a.sweats ? '<p class="text-xs text-slate-600 mt-3">Night sweats can come from menopause, medications, infections or other conditions. If they are new, frequent or come with fever or weight loss, see a doctor.</p>' : '') + '</div>';
+      g('aRecs').innerHTML = cards.join('');
+      const r = g('results'); r.classList.remove('hidden'); r.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

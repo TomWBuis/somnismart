@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SomniSmart Mattress Advisor — Free Science-Based Mattress Matching</title>
+  <meta name="description" content="Free mattress quiz: answer questions about your body, sleep position, partner and pain points to see your science-based ideal mattress design and real mattresses ranked by how closely they match.">
+  <link rel="canonical" href="https://somnismart.com/mattresses.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SomniSmart">
+  <meta property="og:title" content="SomniSmart Mattress Advisor — Free Science-Based Mattress Matching">
+  <meta property="og:description" content="Free mattress quiz: answer questions about your body, sleep position, partner and pain points to see your science-based ideal mattress design and real mattresses ranked by how closely they match.">
+  <meta property="og:url" content="https://somnismart.com/mattresses.html">
+  <meta property="og:image" content="https://somnismart.com/assets/mascot-robot.svg">
+  <meta property="og:image:alt" content="SomniSmart mascot robot hugging a pillow">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SomniSmart Mattress Advisor — Free Science-Based Mattress Matching">
+  <meta name="twitter:description" content="Free mattress quiz: answer questions about your body, sleep position, partner and pain points to see your science-based ideal mattress design and real mattresses ranked by how closely they match.">
+  <meta name="twitter:image" content="https://somnismart.com/assets/mascot-robot.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://somnismart.com/#website",
+      "name": "SomniSmart",
+      "url": "https://somnismart.com/",
+      "description": "SomniSmart is a free, science-based sleep product advisor: transparent shortlists of currently available mattresses, pillows, sleep accessories and evidence-based sleep nutrition, ranked only by matching rules.",
+      "publisher": {
+        "@id": "https://somnismart.com/#org"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://somnismart.com/#org",
+      "name": "SomniSmart",
+      "url": "https://somnismart.com/",
+      "email": "hello@somnismart.com",
+      "logo": "https://somnismart.com/assets/mascot-robot.svg"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "SomniSmart Mattress Advisor",
+      "url": "https://somnismart.com/mattresses.html",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free mattress advisor: answer a few questions about your body, sleep position and needs to get a transparent shortlist of currently available mattresses, ranked only by matching rules."
+    }
+  ]
+}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system_ui, sans-serif; }
+    .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Shared site nav -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50" aria-label="Main">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">S</div>
+        <span class="font-semibold text-lg">SomniSmart</span>
+      </a>
+      <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm">
+        <a href="index.html" class="hover:text-indigo-600 whitespace-nowrap">Home</a>
+        <a href="mattresses.html" class="text-indigo-600 font-semibold whitespace-nowrap" aria-current="page">Mattresses</a>
+        <a href="pillows.html" class="hover:text-indigo-600 whitespace-nowrap">Pillows</a>
+        <a href="accessories.html" class="hover:text-indigo-600 whitespace-nowrap">Accessories</a>
+        <a href="nutrition.html" class="hover:text-indigo-600 whitespace-nowrap">Nutrition</a>
+      </div>
+    </div>
+  </nav>
+  <!-- In-page links (mattress advisor) -->
+  <div class="bg-slate-100 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-slate-600">
+      <a href="#how" class="hover:text-indigo-600">How it works</a>
+      <a href="#science" class="hover:text-indigo-600">The science</a>
+      <a href="#start" class="hover:text-indigo-600">Start mattress quiz</a>
+      <a href="#transparency" class="hover:text-indigo-600">Transparency</a>
+      <a href="index.html#faq" class="hover:text-indigo-600">FAQ</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-gradient text-white py-20 px-4">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div class="flex-1 text-center md:text-left">
+        <p class="text-indigo-300 text-sm font-medium tracking-wide uppercase mb-4">Powered by Grok</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Find the right mattress<br>without the noise.</h1>
+        <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto md:mx-0">
+          SomniSmart uses Grok’s science-based matching to cut through thousands of options. 
+          Get a clear shortlist of currently available mattresses matched to your body, sleep style, and needs.
+        </p>
+        <a href="#start" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-8 py-3 rounded-lg transition">
+          Get my free recommendations
+        </a>
+        <p class="text-sm text-slate-400 mt-4">Free for visitors. Ranked only by matching rules.</p>
+      </div>
+      <div class="flex-shrink-0">
+        <img src="assets/mascot-robot.svg" alt="SomniSmart mascot robot hugging a pillow" width="539" height="833" class="w-44 sm:w-52 md:w-64 lg:w-80 h-auto drop-shadow-2xl" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">How it works</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">1</div>
+          <h3 class="font-semibold text-lg mb-2">Tell Grok about you</h3>
+          <p class="text-slate-600">Sleep position, height, weight, body shape (waist, hips, shoulders), age, any pain or conditions, cooling needs, material preference (organic, natural, or certified-safe), and whether you want more bounce or better motion isolation.</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
+          <h3 class="font-semibold text-lg mb-2">Science rules applied</h3>
+          <p class="text-slate-600">Starts from a medium-firm evidence base, then adjusts for your specific situation — including mobility, pressure relief, and couple differences.</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">3</div>
+          <h3 class="font-semibold text-lg mb-2">Clear shortlist</h3>
+          <p class="text-slate-600">Three currently available options (best science match, most practical, and best value) plus a custom-made option — with the reasoning shown.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Science -->
+  <section id="science" class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-4">The science behind the recommendations</h2>
+      <p class="text-center text-slate-600 mb-10">Grok’s matching is built on established evidence for spinal alignment, pressure relief, and real-world sleep needs.</p>
+      
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-xl border border-slate-200">
+          <h3 class="font-semibold mb-2">Medium-firm starting point</h3>
+          <p class="text-slate-600">Research (including the well-known medium-firm trial for low-back pain) supports medium-firm as the best default for most adults. We adjust from there.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-slate-200">
+          <h3 class="font-semibold mb-2">Position, weight, and body type</h3>
+          <p class="text-slate-600">Side sleepers generally need more shoulder and hip pressure relief. Heavier sleepers need firmer support to avoid bottoming out. Lighter sleepers often prefer a bit softer. We use height to calculate BMI, and waist, hip, and shoulder size to judge body shape: curvy hips with a narrow waist or broad shoulders need softer comfort layers or zoned support so the spine stays aligned.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-slate-200">
+          <h3 class="font-semibold mb-2">Motion, bounce, and mobility</h3>
+          <p class="text-slate-600">Beds are for more than sleep. We factor in motion transfer for couples, responsiveness and bounce for easier movement (including sex), and overall ease of getting in and out — especially important with age or joint issues.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-slate-200">
+          <h3 class="font-semibold mb-2">Pain and medical conditions</h3>
+          <p class="text-slate-600">Extra pressure relief for arthritis or joint pain. Better lumbar support considerations for back pain. Cooling features for hot sleepers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Start / Interactive Form -->
+  <section id="start" class="py-16 px-4 bg-slate-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-2">Get your free recommendations</h2>
+      <p class="text-center text-slate-600 mb-8">Answer a few questions. Grok’s rules will generate a transparent shortlist of currently available mattresses.</p>
+
+      <form id="mattressForm" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6">
+        <!-- Individual or Couple -->
+        <div>
+          <label class="block font-medium mb-2">Is this for one person or a couple?</label>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2"><input type="radio" name="who" value="individual" checked class="text-indigo-600"> Just me</label>
+            <label class="flex items-center gap-2"><input type="radio" name="who" value="couple" class="text-indigo-600"> Me and a partner</label>
+          </div>
+        </div>
+
+        <!-- Weights -->
+        <div id="weightSection">
+          <label class="block font-medium mb-2">Your weight (lbs)</label>
+          <input type="number" id="weight" name="weight" min="80" max="400" placeholder="e.g. 170" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+            <div><label class="block text-sm font-medium mb-1">Your height (ft)</label><select id="heightFt" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">–</option><option value="4">4 ft</option><option value="5">5 ft</option><option value="6">6 ft</option><option value="7">7 ft</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Inches</label><select id="heightIn" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">–</option><option value="0">0 in</option><option value="1">1 in</option><option value="2">2 in</option><option value="3">3 in</option><option value="4">4 in</option><option value="5">5 in</option><option value="6">6 in</option><option value="7">7 in</option><option value="8">8 in</option><option value="9">9 in</option><option value="10">10 in</option><option value="11">11 in</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Body shape (optional)</label><select id="shape" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">Prefer not to say</option><option value="female">Woman</option><option value="male">Man</option><option value="curvy">Curvy hips / narrow waist</option><option value="broad">Broad shoulders</option><option value="straight">Straight / even build</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Waist (in, optional)</label><input type="number" id="waist" min="20" max="70" placeholder="e.g. 30" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></div>
+            <div><label class="block text-sm font-medium mb-1">Hips (in, optional)</label><input type="number" id="hips" min="25" max="80" placeholder="e.g. 40" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></div>
+            <div><label class="block text-sm font-medium mb-1">Dress shirt neck (in, optional)</label><input type="number" id="neck" min="12" max="24" step="0.5" placeholder="e.g. 16.5" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><p class="text-xs text-slate-500 mt-1">For men: helps gauge shoulder width.</p></div>
+          </div>
+          <div id="partnerWeightDiv" class="hidden mt-4">
+            <label class="block font-medium mb-2">Partner’s weight (lbs)</label>
+            <input type="number" id="partnerWeight" name="partnerWeight" min="80" max="400" placeholder="e.g. 140" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+            <div><label class="block text-sm font-medium mb-1">Partner’s height (ft)</label><select id="partnerheightFt" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">–</option><option value="4">4 ft</option><option value="5">5 ft</option><option value="6">6 ft</option><option value="7">7 ft</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Inches</label><select id="partnerheightIn" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">–</option><option value="0">0 in</option><option value="1">1 in</option><option value="2">2 in</option><option value="3">3 in</option><option value="4">4 in</option><option value="5">5 in</option><option value="6">6 in</option><option value="7">7 in</option><option value="8">8 in</option><option value="9">9 in</option><option value="10">10 in</option><option value="11">11 in</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Body shape (optional)</label><select id="partnershape" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="">Prefer not to say</option><option value="female">Woman</option><option value="male">Man</option><option value="curvy">Curvy hips / narrow waist</option><option value="broad">Broad shoulders</option><option value="straight">Straight / even build</option></select></div>
+            <div><label class="block text-sm font-medium mb-1">Waist (in, optional)</label><input type="number" id="partnerwaist" min="20" max="70" placeholder="e.g. 30" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></div>
+            <div><label class="block text-sm font-medium mb-1">Hips (in, optional)</label><input type="number" id="partnerhips" min="25" max="80" placeholder="e.g. 40" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></div>
+            <div><label class="block text-sm font-medium mb-1">Dress shirt neck (in, optional)</label><input type="number" id="partnerneck" min="12" max="24" step="0.5" placeholder="e.g. 16.5" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><p class="text-xs text-slate-500 mt-1">For men: helps gauge shoulder width.</p></div>
+          </div>
+            <div class="mt-4"><label class="block text-sm font-medium mb-1">Partner’s primary sleep position</label>
+              <select id="partnerPosition" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"><option value="side">Mostly side</option><option value="back">Mostly back</option><option value="stomach">Mostly stomach</option><option value="combo">Combination / mix</option></select></div>
+            <div class="mt-4"><label class="block text-sm font-medium mb-1">Partner’s pain or conditions (optional)</label>
+              <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="back"> Low-back pain</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="joint"> Joint / arthritis pain</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="hot"> Sleeps hot</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="mobility"> Mobility / ease of movement important</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="hip"> Hip pressure points</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="pconditions" value="shoulder"> Shoulder pressure points</label>
+              </div></div>
+          </div>
+        </div>
+
+        <!-- Sleep position -->
+        <div>
+          <label class="block font-medium mb-2">Primary sleep position</label>
+          <select id="position" name="position" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+            <option value="side">Mostly side</option>
+            <option value="back">Mostly back</option>
+            <option value="stomach">Mostly stomach</option>
+            <option value="combo">Combination / mix</option>
+          </select>
+        </div>
+
+        <!-- Pain / conditions -->
+        <div>
+          <label class="block font-medium mb-2">Any pain or conditions? (optional)</label>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="back"> Low-back pain</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="joint"> Joint / arthritis pain</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="hot"> Sleep hot</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="mobility"> Mobility / ease of movement important</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="hip"> Hip pressure points</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="conditions" value="shoulder"> Shoulder pressure points</label>
+          </div>
+        </div>
+
+        <!-- Bounce preference -->
+        <div>
+          <label class="block font-medium mb-2">Preference for movement and bounce</label>
+          <select id="bounce" name="bounce" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+            <option value="responsive">More bounce / easier to move (good for sex & mobility)</option>
+            <option value="balanced">Balanced</option>
+            <option value="isolated">Strong motion isolation (less bounce)</option>
+          </select>
+        </div>
+
+        <!-- Material preference -->
+        <div>
+          <label class="block font-medium mb-2">Material preference</label>
+          <select id="material" name="material" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+            <option value="none" selected>No preference</option>
+            <option value="organic">Organic (certified organic, e.g. GOTS / GOLS)</option>
+            <option value="natural">Natural (natural latex, wool, cotton; no polyurethane foam)</option>
+            <option value="safe">Commonly accepted as safe (e.g. CertiPUR-US foams, GREENGUARD Gold)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 rounded-lg transition">
+          Generate recommendations
+        </button>
+      </form>
+
+      <!-- Results -->
+      <div id="results" class="hidden mt-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+        <h3 class="text-xl font-bold mb-4">Your recommendations</h3>
+        <p class="text-xs text-slate-500 mb-4">Disclosure: some product links may be affiliate links, and SomniSmart may earn a commission if you buy, at no extra cost to you. Picks are chosen only by our fit rules, never by commission. <a href="disclosure.html" class="underline hover:text-indigo-600">Learn more</a>.</p>
+        <div id="reasoning" class="text-sm text-slate-600 bg-slate-50 p-4 rounded-lg mb-6"></div>
+        <div id="recs" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        <p class="text-xs text-slate-500 mt-6">
+          Ranked only by science-based matching rules. Some links may be affiliate links that help support the site; they do not influence ranking or order.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparency -->
+  <section id="transparency" class="py-16 px-4 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Transparency</h2>
+      <div class="prose prose-slate max-w-none">
+        <p class="text-slate-700 mb-4">
+          Recommendations are generated by Grok’s science-based matching rules using your answers on sleep position, height, weight, body shape, age, conditions, mobility needs, and preferences.
+        </p>
+        <p class="text-slate-700 mb-4">
+          Some links to products are affiliate links. If you buy through them, the site may earn a commission at no extra cost to you.
+        </p>
+        <p class="text-slate-700 font-medium">
+          Affiliate relationships do not affect ranking. Products are ordered only by how well they match the published criteria. Strong matches appear even when no affiliate program exists.
+        </p>
+        <p class="text-sm text-slate-500 mt-6">
+          Ranking is completed before any affiliate links are added. Payment or commissions never change eligibility or order.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ lives on the home page -->
+  <section class="py-10 px-4 bg-slate-50 text-center">
+    <p class="text-slate-600">Questions about firmness, materials, couples or how we rank? <a href="index.html#faq" class="text-indigo-600 font-medium underline">Read the SomniSmart FAQ</a>.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-8 px-4 text-center text-sm">
+    <p class="mb-2">SomniSmart · Science-based mattress matching powered by Grok</p>
+    <p>Free for visitors. Ranked only by matching rules. Affiliate links do not influence recommendations.</p>
+    <p class="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
+      <a href="index.html" class="hover:text-white">Home</a>
+      <a href="mattresses.html" class="hover:text-white">Mattresses</a>
+      <a href="pillows.html" class="hover:text-white">Pillows</a>
+      <a href="accessories.html" class="hover:text-white">Accessories</a>
+      <a href="nutrition.html" class="hover:text-white">Nutrition</a>
+    </p>
+    <p class="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1">
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="disclosure.html" class="hover:text-white">Affiliate disclosure</a>
+      <a href="privacy.html" class="hover:text-white">Privacy policy</a>
+      <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      <a href="contact.html" class="hover:text-white">Contact</a>
+    </p>
+    <p class="mt-4 text-slate-500">© 2026 SomniSmart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ===================== AFFILIATE LINKS: PASTE HERE =====================
+    // Once a brand approves you (Impact, Awin, etc.), paste its tracking link
+    // into that product's affiliateUrl below, e.g.
+    //   affiliateUrl: 'https://brand.pxf.io/c/XXXX/YYYY/ZZZZ'
+    // Leave affiliateUrl as '' until approved: the Shop button then falls back
+    // to the brand's official homepage (brandUrl), with no tracking.
+    // When an affiliateUrl is set, a subId (best / practical / value) is added
+    // automatically so you can see which result slot earned the click.
+    // Affiliate links NEVER change which products are recommended or their order.
+    // =========================================================================
+    const PRODUCTS = {
+      winkbed:  { brandUrl: 'https://www.winkbeds.com/',        affiliateUrl: '' },
+      saatva:   { brandUrl: 'https://www.saatva.com/',          affiliateUrl: '' },
+      helix:    { brandUrl: 'https://helixsleep.com/',          affiliateUrl: '' },
+      brooklyn: { brandUrl: 'https://brooklynbedding.com/',     affiliateUrl: '' },
+      leesa:    { brandUrl: 'https://www.leesa.com/',           affiliateUrl: '' },
+      avocado:  { brandUrl: 'https://www.avocadogreenmattress.com/', affiliateUrl: '' },
+      birch:    { brandUrl: 'https://birchliving.com/',         affiliateUrl: '' },
+      // Chirobed is SomniSmart's own affiliated brand (not an affiliate program): no tracking, no subId.
+      chirobed: { brandUrl: 'https://chirobed.com',             affiliateUrl: '', own: true, slot: 'custom' }
+    };
+    const SUBID_PARAM = 'subId1'; // Impact uses subId1; Awin uses clickref. Change per network if needed.
+    function shopUrl(key, slot) {
+      const p = PRODUCTS[key] || {};
+      if (p.own) return p.brandUrl;
+      if (p.affiliateUrl) {
+        try { const u = new URL(p.affiliateUrl); u.searchParams.set(SUBID_PARAM, slot); return u.toString(); }
+        catch (e) { return p.affiliateUrl; }
+      }
+      return p.brandUrl || '#';
+    }
+
+    // Show/hide partner weight
+    document.querySelectorAll('input[name="who"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const div = document.getElementById('partnerWeightDiv'); // includes partner body measurements
+        if (radio.value === 'couple' && radio.checked) {
+          div.classList.remove('hidden');
+        } else if (radio.value === 'individual' && radio.checked) {
+          div.classList.add('hidden');
+        }
+      });
+    });
+
+    // Form logic
+    document.getElementById('mattressForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const who = document.querySelector('input[name="who"]:checked').value;
+      const weight = parseInt(document.getElementById('weight').value) || 170;
+      const partnerWeight = who === 'couple' ? (parseInt(document.getElementById('partnerWeight').value) || 140) : null;
+      const position = document.getElementById('position').value;
+      const bounce = document.getElementById('bounce').value;
+      const material = (document.getElementById('material') || {}).value || 'none';
+      const myConds = Array.from(document.querySelectorAll('input[name="conditions"]:checked')).map(cb => cb.value);
+      const partnerConds = who === 'couple' ? Array.from(document.querySelectorAll('input[name="pconditions"]:checked')).map(cb => cb.value) : [];
+      const partnerPosition = who === 'couple' ? document.getElementById('partnerPosition').value : null;
+      const conditions = Array.from(new Set(myConds.concat(partnerConds)));
+
+      // Simple rule-based logic
+      let firmness = 'medium-firm';
+      let reasons = [];
+      let avgWeightFirmFlag = false;
+
+      // Position
+      if (position === 'side') {
+        firmness = 'medium';
+        reasons.push('softer for side-sleeping pressure relief at shoulders and hips');
+      } else if (position === 'stomach') {
+        firmness = 'medium-firm to firm';
+        reasons.push('firmer to limit hip sag for stomach sleeping');
+      } else if (position === 'back') {
+        firmness = 'medium-firm';
+        reasons.push('medium-firm for balanced spinal alignment on the back');
+      } else {
+        firmness = 'medium to medium-firm';
+        reasons.push('balanced feel for combination sleeping');
+      }
+
+      // Weight
+      const avgWeight = partnerWeight ? Math.max(weight, partnerWeight) : weight;
+      if (avgWeight < 130) {
+        reasons.push('lighter weight → slightly softer feel');
+      } else if (avgWeight > 230) {
+        firmness = firmness.includes('firm') ? 'firm' : 'medium-firm';
+        reasons.push('higher weight → firmer support to avoid bottoming out');
+      }
+
+      // Body measurements (all optional; blank fields keep defaults)
+      const num = id => { const v = parseFloat((document.getElementById(id) || {}).value); return isNaN(v) ? null : v; };
+      const readBody = (p, wt) => {
+        const ft = num(p + 'heightFt'), inch = num(p + 'heightIn');
+        const h = ft !== null ? ft * 12 + (inch || 0) : null;
+        const waist = num(p + 'waist'), hips = num(p + 'hips'), neck = num(p + 'neck');
+        const shape = (document.getElementById(p + 'shape') || {}).value || '';
+        return { wt, h, bmi: h ? 703 * wt / (h * h) : null, wpi: h ? wt / h : null,
+          hwr: waist && hips ? hips / waist : null, curvy: shape === 'curvy' || (waist && hips && hips / waist >= 1.3),
+          broad: shape === 'broad' || (neck !== null && neck >= 17) };
+      };
+      const people = [{ label: 'you', b: readBody('', weight) }];
+      if (who === 'couple') people.push({ label: 'your partner', b: readBody('partner', partnerWeight) });
+      let needsFirmer = false, needsZoned = false;
+      people.forEach(({ label, b }) => {
+        if (b.bmi) {
+          const info = `BMI ${b.bmi.toFixed(1)}, ${b.wpi.toFixed(1)} lb per inch of height`;
+          if (b.bmi > 30 && b.wt <= 230) {
+            needsFirmer = true;
+            firmness = firmness.includes('firm') ? 'firm' : 'medium-firm';
+            reasons.push(`${label}: ${info} → firmer, thicker, higher-density build to avoid bottoming out`);
+          } else if (b.bmi < 20 && b.wt >= 130) {
+            reasons.push(`${label}: ${info} → slightly softer feel (less body mass to sink into the comfort layers)`);
+          } else {
+            reasons.push(`${label}: ${info}`);
+          }
+        }
+        if (b.curvy) {
+          needsZoned = true;
+          if (firmness === 'firm') firmness = 'medium-firm';
+          reasons.push(`${label}: ${b.hwr ? 'hip-to-waist ratio ' + b.hwr.toFixed(2) + ' (curvy hips, narrower waist)' : 'curvier hips'} → avoid too-firm; softer comfort layer or zoned support so hips sink in without tilting the pelvis` + ((position === 'side' || position === 'back' || position === 'combo') ? ', especially important for ' + position + ' sleeping' : ''));
+        }
+        if (b.broad && (position === 'side' || position === 'combo')) {
+          needsZoned = true;
+          reasons.push(`${label}: broad shoulders on the side → extra shoulder pressure relief (softer top or zoned support)`);
+        } else if (b.broad) {
+          reasons.push(`${label}: broad shoulders noted`);
+        }
+      });
+      if (needsFirmer) avgWeightFirmFlag = true;
+
+      // Conditions
+      if (conditions.includes('back')) reasons.push('extra lumbar support considerations for low-back pain');
+      if (conditions.includes('hip') || conditions.includes('shoulder')) { needsZoned = true; reasons.push('hip/shoulder pressure points → softer, thicker comfort layer with lower ILD and zoned support'); }
+      if (partnerPosition && partnerPosition !== position) reasons.push('partner sleeps ' + partnerPosition + ' (you: ' + position + ') → per-side targets below');
+      if (conditions.includes('joint')) reasons.push('more pressure relief for joint/arthritis pain');
+      if (conditions.includes('hot')) reasons.push('cooling features prioritized');
+      if (conditions.includes('mobility') || bounce === 'responsive') reasons.push('responsive hybrid preferred for easier movement and bounce');
+
+      // Bounce
+      let typePref = bounce === 'isolated' ? 'memory foam or low-bounce hybrid' : 'hybrid with pocket coils';
+      if (bounce === 'responsive') typePref = 'responsive hybrid (coils for bounce and mobility)';
+
+      if (needsZoned) typePref += ', with zoned support and a pressure-relieving comfort layer';
+
+      // Reasoning text
+      const reasoningEl = document.getElementById('reasoning');
+      reasoningEl.innerHTML = `<strong>Matching logic:</strong> Started from medium-firm evidence base. Adjusted for ${reasons.join('; ')}. Preferring ${typePref}.`;
+
+      // Sample recommendations (illustrative currently available-style products)
+      const recs = [
+        {
+          tier: 'Best science match',
+          name: 'WinkBed Luxury Firm',
+          details: 'Hybrid · Medium-firm · ~14" · Zoned coils + adaptive foam',
+          why: 'Strong overall match for spinal alignment, pressure relief, and responsive bounce. Good for couples and mobility.',
+          product: 'winkbed', slot: 'best'
+        },
+        {
+          tier: 'Most practical',
+          name: 'Helix Midnight Luxe',
+          details: 'Hybrid · Medium · ~13.5" · Zoned coils + memory foam comfort',
+          why: 'Balanced feel with good motion isolation and cooling cover. Solid everyday choice.',
+          product: 'helix', slot: 'practical'
+        },
+        {
+          tier: 'Best value',
+          name: 'Brooklyn Bedding Signature Hybrid',
+          details: 'Hybrid · Medium-firm · ~12" · Pocket coils + foam',
+          why: 'Strong support and bounce at a lower price. Good edge support for the cost.',
+          product: 'brooklyn', slot: 'value'
+        }
+      ];
+
+      // Slight adjustments based on inputs
+      if (position === 'side' && avgWeight < 180) {
+        recs[0].name = 'Saatva Classic (Plush Soft or Luxury Firm)';
+        recs[0].product = 'saatva';
+        recs[0].why = 'Pillow-top hybrid with good pressure relief for side sleepers plus coil responsiveness.';
+      }
+      if (avgWeight > 230 || avgWeightFirmFlag) {
+        recs[0].name = 'WinkBed Plus or Helix Plus';
+        recs[0].product = 'winkbed';
+        recs[0].why = 'Reinforced for higher weights with firm support and durability.';
+      }
+      if (bounce === 'isolated') {
+        recs[1].name = 'Leesa Sapira or similar memory foam hybrid';
+        recs[1].product = 'leesa';
+        recs[1].why = 'Better motion isolation while still offering hybrid support.';
+      }
+
+      // Material preference (certifications confirmed from brand pages / reputable reviewers, Oct 2026)
+      const softer = position === 'side' || needsZoned;
+      const firmer = avgWeight > 230 || avgWeightFirmFlag || position === 'stomach';
+      const avoFeel = firmer ? 'Firm' : (softer ? 'Plush pillow-top' : 'Medium');
+      const avo = (tier, slot) => ({ tier, slot, product: 'avocado', label: 'Avocado',
+        name: 'Avocado Green Mattress (' + avoFeel + ')',
+        details: 'Latex hybrid · ' + avoFeel + ' · 7-zone pocketed coils · organic Dunlop latex, wool, cotton',
+        why: (firmer ? 'Firm tight-top keeps hips level for heavier or stomach sleepers. ' : softer ? 'Pillow-top with 5" of latex for shoulder and hip pressure relief. ' : 'Balanced medium feel for most positions. ') + 'GOTS-certified organic finished product with GOLS organic latex; also GREENGUARD Gold, OEKO-TEX Standard 100 Class I, MADE SAFE and EWG Verified. No polyurethane foam or fiberglass.' });
+      const saatvaLatex = (tier, slot) => ({ tier, slot, product: 'saatva', label: 'Saatva',
+        name: 'Saatva Latex Hybrid',
+        details: 'Latex hybrid · Medium-firm (6/10) · 5-zone natural latex over pocketed coils',
+        why: 'Zoned latex adds lumbar support with buoyant, cool pressure relief. GOLS-certified organic latex, eco-INSTITUT and GREENGUARD Gold; cover includes organic cotton and organic wool.' });
+      const zenhaven = (tier, slot) => ({ tier, slot, product: 'saatva', label: 'Saatva',
+        name: 'Saatva Zenhaven',
+        details: 'All-latex · Flippable, two firmness sides · 5-zone natural latex',
+        why: 'Flip to the softer side for shoulder and hip relief, firmer side if needs change. GOLS-certified organic latex, eco-INSTITUT and GREENGUARD Gold; no petroleum-based foams.' });
+      const birch = (tier, slot) => ({ tier, slot, product: 'birch', label: 'Birch',
+        name: 'Birch Natural Mattress',
+        details: 'Latex hybrid · Medium-firm · Natural latex, wool, pocketed coils',
+        why: 'Medium-firm support with natural wool and latex, no foams. GOLS-certified organic latex and GREENGUARD Gold; organic cotton cover (not a GOTS-certified finished product).' });
+      if (material === 'organic') {
+        recs.splice(0, 3, avo('Best science match', 'best'), softer ? zenhaven('Most practical', 'practical') : saatvaLatex('Most practical', 'practical'), birch('Best value', 'value'));
+        reasons.push('organic preference → GOTS/GOLS-certified materials (Avocado is GOTS-certified as a finished product)');
+      } else if (material === 'natural') {
+        recs.splice(0, 3, softer ? zenhaven('Best science match', 'best') : saatvaLatex('Best science match', 'best'), birch('Most practical', 'practical'), avo('Best value', 'value'));
+        reasons.push('natural preference → natural latex, wool and cotton, no polyurethane foam');
+      } else if (material === 'safe') {
+        const CERTS = {
+          winkbed: 'CertiPUR-US certified foams.',
+          saatva: 'CertiPUR-US certified foams and GREENGUARD Gold.',
+          helix: 'CertiPUR-US certified foams and GREENGUARD Gold.',
+          brooklyn: 'CertiPUR-US certified foams and GREENGUARD Gold.',
+          leesa: 'CertiPUR-US certified foams.'
+        };
+        recs.forEach(r => { if (CERTS[r.product]) r.why += ' Certifications: ' + CERTS[r.product]; });
+        reasons.push('safety preference → foams certified to CertiPUR-US (low VOC, no formaldehyde or PBDE flame retardants)');
+      }
+      if (material !== 'none') reasoningEl.innerHTML = `<strong>Matching logic:</strong> Started from medium-firm evidence base. Adjusted for ${reasons.join('; ')}. Preferring ${typePref}.`;
+
+      // Custom Made: always shown (own brand, listed separately from the ranked picks)
+      const fit = [];
+      if (people.some(x => x.b.h)) fit.push('your height and weight');
+      if (needsZoned) fit.push('your body shape');
+      if (conditions.includes('back') || conditions.includes('joint')) fit.push('your pain points');
+      recs.push({
+        tier: 'Custom Made',
+        name: 'Chirobed by Spine Align',
+        details: 'Made to order · Handcrafted in Holland, Michigan',
+        why: 'Chiropractor-endorsed mattresses custom made to your BMI, preferences, body type and condition, from a family-owned Holland, Michigan maker (since 1913). ' + (fit.length ? 'Built around ' + fit.join(', ') + ' from your answers.' : 'Built to your body measurements and sleep needs.'),
+        product: 'chirobed', slot: 'custom', own: true, label: 'Chirobed'
+      });
+
+      // ===== CONSTRUCTION SPECS (queen unless noted). NEVER invent numbers: unpublished = NP. =====
+      const NP = 'Not published by brand';
+      const SPECS = {
+        // Sources: https://naplab.com/mattress-reviews/winkbed-review/ ; https://www.goodbed.com/mattress-model/winkbeds-winkbed/
+        winkbed: { type: 'hybrid', layersCount: 5, layers: [
+            ['Euro pillow top (gel-infused poly foam, Tencel cover)', '2"', NP, '1.8 lb/ft³ (mfr, via NapLab)'],
+            ['Poly foam comfort layer', '2"', NP, '4.0 lb/ft³ (mfr, via NapLab)'],
+            ['Poly foam (zoned LumbarLayer)', '0.5"', NP, '2.5 lb/ft³ (mfr, via NapLab)'],
+            ['Zoned pocketed coils', '8"', '—', '—'],
+            ['Support foam base', '1"', NP, '1.5 lb/ft³ (mfr, via NapLab)']],
+          coils: { type: 'Pocketed, zoned', count: '858 (queen, per GoodBed)', gauge: '14.75 interior, 13.75 edge (mfr, via NapLab)', turns: NP, height: '8"', zoning: 'Yes (zoned coils + lumbar layer)', edge: 'Reinforced 13.75-ga perimeter coils' },
+          zoned: true, gaugeMin: 13.75 },
+        // Sources: https://naplab.com/mattress-reviews/winkbed-plus-review/ ; https://naplab.com/faqs/how-many-coils-does-a-winkbed-plus-mattress-have/
+        winkbedplus: { type: 'hybrid', layersCount: 5, layers: [
+            ['Pillow top (poly foam)', '1.5"', NP, NP], ['Poly foam', '2"', NP, NP], ['Poly foam', '2"', NP, NP],
+            ['Pocketed coils', '8"', '—', '—'], ['Support foam', '1"', NP, NP]],
+          coils: { type: 'Pocketed', count: '1,074 (queen, per NapLab)', gauge: '15/16 interior, 13.75 edge (per NapLab)', turns: NP, height: '8"', zoning: NP, edge: '13.75-ga perimeter coils' },
+          zoned: false, gaugeMin: 13.75 },
+        // Sources: https://naplab.com/mattress-reviews/helix-midnight-luxe-review/ (current specs Sept 2026) ; https://helixsleep.com/products/midnight-luxe
+        helix: { type: 'hybrid', layersCount: 6, layers: [
+            ['Quilted pillow top (TENCEL or GlacioTex cover)', '1"', NP, '1.5 lb/ft³'],
+            ['Copper gel memory foam', '0.75"', NP, '1.8 lb/ft³'],
+            ['High-density memory foam (SupremeSupport)', '2"', NP, '4.0 lb/ft³'],
+            ['Responsive poly transition foam', '1"', NP, '1.8 lb/ft³'],
+            ['Zoned pocketed coils (lumbar zone)', '8"', '—', '—'],
+            ['DuraDense base foam', '1"', NP, '1.4 lb/ft³']],
+          coils: { type: 'Pocketed, zoned', count: 'Up to 1,000 (brand); 852 queen per Macy\'s listing', gauge: '13.5 center, 14.75 head/foot, 15.5 edge (mfr, via NapLab)', turns: NP, height: '8"', zoning: 'Yes, reinforced under hips', edge: 'Reinforced perimeter' },
+          zoned: true, gaugeMin: 13.5 },
+        // Sources: https://brooklynbedding.com/products/signature-hybrid ; https://naplab.com/mattress-reviews/brooklyn-bedding-signature-hybrid-review/
+        brooklyn: { type: 'hybrid', layersCount: 7, layers: [
+            ['GlacioTex cooling cover', '—', '—', '—'],
+            ['Quilt foam', '0.75"', NP, NP], ['Quilt foam', '0.75"', NP, NP],
+            ['Gel swirl memory foam', '1"', NP, '2.4 lb/ft³ (mfr, via NapLab)'],
+            ['VX 2.5 responsive poly foam', '1"', NP, '2.5 lb/ft³ (brand)'],
+            ['VariFlex transition foam', '1"', NP, NP],
+            ['Ascension X pocketed coils', '8"', '—', '—'],
+            ['Supportive base foam', '0.75"', NP, '1.4 lb/ft³ (mfr, via NapLab)']],
+          coils: { type: 'Pocketed (encased)', count: 'Up to 760 (brand; queen count not stated)', gauge: '15.5 inner, 14.75 outer (mfr, via NapLab)', turns: NP, height: '8"', zoning: 'Not zoned (per NapLab)', edge: 'Stronger outer coils' },
+          zoned: false, gaugeMin: 14.75, note: '7 layers without pillowtop (13.25"), 8 with pillowtop (14"). Cover listed for reference.' },
+        // Sources: https://saatvahelp.saatva.com/hc/en-us/articles/11914686059543-What-are-the-Saatva-Classic-specs ; https://www.saatva.com/llms-full.txt
+        saatvaclassic: { type: 'innerspring', layersCount: NP, layers: [
+            ['Euro pillow top (organic cotton cover)', NP, NP, NP],
+            ['Memory foam lumbar layer', NP, NP, NP],
+            ['Individually wrapped comfort coils', NP, '—', '—'],
+            ['Tempered steel coil support base', NP, '—', '—']],
+          coils: { type: 'Dual coil: pocketed comfort coils over steel base unit', count: '1,300 queen (884 wrapped + 416 base)', gauge: '14.5 comfort coils, 13 base coils', turns: NP, height: NP + ' (mattress 11.5" or 14.5")', zoning: 'Lumbar zone (firmer quilting, memory foam, reinforced wire)', edge: NP },
+          zoned: true, gaugeMin: 13 },
+        // Sources: https://www.leesa.com/products/sapira-chill-mattress ; https://www.goodbed.com/mattress-model/leesa-sapira-chill-hybrid-medium-firm/
+        leesa: { type: 'hybrid', layersCount: 7, layers: [
+            ['Ultra Cool Cover', '—', '—', '—'],
+            ['Quilt foam (gel-infused)', '2"', NP, NP],
+            ['GreenFlex BioFoam', '1.5"', NP, '3 lb/ft³ (brand)'],
+            ['Responsive foam', '1"', NP, NP],
+            ['Transition support foam', '1"', NP, NP],
+            ['Zoned pocketed springs', '8"', '—', '—'],
+            ['Support foam base', '0.75"', NP, NP]],
+          coils: { type: 'Pocketed, zoned', count: 'Up to 1,032 (brand; GoodBed lists 840 for medium-firm)', gauge: NP + ' (edges are heavier gauge)', turns: NP, height: '8"', zoning: 'Yes, reinforced under hips', edge: 'Heavier-gauge perimeter' },
+          zoned: true, gaugeMin: null, note: 'Brand calls this 7-layer construction (Sapira Chill, 14").' },
+        // Sources: https://help.avocadogreenmattress.com/en/articles/4649976 ; https://help.avocadogreenmattress.com/en/articles/4649953
+        avocado: { type: 'latex hybrid', layersCount: '5 (standard) / 6 (pillow-top)', layers: [
+            ['Organic cotton cover + organic wool', NP, '—', '—'],
+            ['Organic Dunlop latex (pillow-top versions only)', '2"', '14–19', 'D65 (brand grade)'],
+            ['Organic Dunlop latex comfort layer', '2"', '14–19', 'D65 (brand grade)'],
+            ['7-zone pocketed coils (recycled steel)', '8"', '—', '—'],
+            ['Organic Dunlop latex base', '1"', '14–19', 'D65 (brand grade)']],
+          coils: { type: 'Pocketed, patented 7-zone', count: '1,081 queen (Medium/Plush); 1,049 queen (Firm)', gauge: '14 (hip/head/foot), 15 (shoulders/legs), 16 high-tensile (borders & transition)', turns: '5.5 (main coils)', height: '8"', zoning: '7 zones', edge: 'Reinforced on all four sides' },
+          zoned: true, gaugeMin: 14 },
+        // Sources: https://saatvahelp.saatva.com/hc/en-us/articles/11914347698711-What-are-the-Latex-Hybrid-product-specs
+        saatvalatex: { type: 'latex hybrid', layersCount: NP, layers: [
+            ['Organic cotton cover with organic wool', NP, '—', '—'],
+            ['5-zone natural latex', '3"', '22–23', NP],
+            ['Pocketed coils', NP, '—', '—']],
+          coils: { type: 'Pocketed (Caliper Edge)', count: '789 queen', gauge: '14.5 center, 13.75 head/foot edges', turns: NP, height: NP, zoning: '5-zone latex', edge: '13.75-ga edge support coils' },
+          zoned: true, gaugeMin: 13.75, note: 'Mattress height 12".' },
+        // Sources: https://www.tuck.com/mattress-reviews/zenhaven-mattress-review/ ; https://sleepdoctor.com/pages/reviews/zenhaven-mattress-review
+        zenhaven: { type: 'all-latex', layersCount: '4 latex layers (flippable)', layers: [
+            ['Natural latex comfort, Luxury Plush side', '1.5"', '14–19 (reviewer)', NP],
+            ['Natural latex core', '3"', '25–29 (reviewer)', NP],
+            ['Natural latex core', '3"', '30–34 (reviewer)', NP],
+            ['Natural latex comfort, Gentle Firm side', '1.5"', '20–24 (reviewer)', NP]],
+          coils: null, zoned: true, gaugeMin: null, note: '10" total. Latex type reported as Talalay in older reviews, Dunlop in newer ones; confirm with Saatva.' },
+        // Sources: https://birchliving.com/products/birch-natural-organic-mattress ; https://sleepsage.com/reviews/birch-natural-mattress
+        birch: { type: 'latex hybrid', layersCount: NP, layers: [
+            ['Organic cotton cover', '—', '—', '—'],
+            ['Natural wool', NP, '—', '—'],
+            ['Natural latex (GOLS)', '2" (reviewer)', NP, NP],
+            ['Pocketed coils', '8"', '—', '—'],
+            ['Wool base', NP, '—', '—']],
+          coils: { type: 'Pocketed', count: '852 queen (retailer listing; not on brand page)', gauge: '14.5 (retailer listing)', turns: NP, height: '8"', zoning: NP, edge: NP },
+          zoned: false, gaugeMin: 14.5, note: '11" total.' },
+        // chirobed.com publishes no layer/coil specs
+        chirobed: { custom: true }
+      };
+      const specRows = (s) => {
+        if (!s) return '<p class="text-xs text-slate-500">Specs not available.</p>';
+        if (s.custom) return '<p class="text-xs text-slate-600">Contact Chirobed for build specs — each mattress is made to order for your measurements.</p>';
+        const layerRows = s.layers.map((l, i) => `<tr><td class="pr-2">${i + 1}</td><td class="pr-2">${l[0]}</td><td class="pr-2">${l[1]}</td><td class="pr-2">${l[2]}</td><td>${l[3]}</td></tr>`).join('');
+        const c = s.coils;
+        const coilHtml = c ? `<p class="mt-2"><strong>Coils:</strong> ${c.type} · Count: ${c.count} · Gauge: ${c.gauge} · Turns: ${c.turns} · Coil height: ${c.height} · Zoning: ${c.zoning} · Edge: ${c.edge}</p>` : '<p class="mt-2"><strong>Coils:</strong> None (all-latex)</p>';
+        return `<p><strong>Layers:</strong> ${s.layersCount}</p>
+          <table class="w-full text-left mt-1"><thead><tr class="text-slate-500"><th>#</th><th>Material (top → bottom)</th><th>Thick.</th><th>ILD</th><th>Density</th></tr></thead><tbody>${layerRows}</tbody></table>
+          ${coilHtml}${s.note ? `<p class="mt-1 text-slate-500">${s.note}</p>` : ''}`;
+      };
+      // ===== YOUR IDEAL MATTRESS (guideline ranges from general sleep-science guidance, NOT product specs) =====
+      const firmNum = { 'medium': '5–6', 'medium to medium-firm': '5–6.5', 'medium-firm': '6–7', 'medium-firm to firm': '6.5–7.5', 'firm': '7–8' }[firmness] || '6–7';
+      const heavy = avgWeight > 230 || avgWeightFirmFlag;
+      const light = avgWeight && avgWeight < 130;
+      const ideal = {
+        construction: material === 'organic' || material === 'natural' ? 'Latex hybrid (natural/organic latex over pocketed coils) or all-latex'
+          : (bounce === 'isolated' ? 'Hybrid with memory-foam comfort layers (or all-foam)' : 'Hybrid (foam or latex comfort over pocketed coils)'),
+        comfort: heavy ? '2–4 comfort layers, about 3–4" total, high-density' : (position === 'side' || light ? '2–4 comfort layers, about 3–5" total, softer top' : '2–3 comfort layers, about 2–4" total'),
+        ild: position === 'side' || light ? 'about 10–19 (soft–medium) top layer' : (heavy || position === 'stomach' ? 'about 19–30 (medium–firm)' : 'about 14–24 (medium)'),
+        density: heavy ? 'memory foam 4+ lb/ft³, poly foam 1.8+ lb/ft³' : 'memory foam 3+ lb/ft³, poly foam 1.5–1.8+ lb/ft³',
+        coils: heavy ? '8"+ pocketed coils, lower (thicker) gauge about 13–14 in center, reinforced edge' : '6–8" pocketed coils, about 13.5–15 gauge',
+        zoning: needsZoned || conditions.includes('back') ? 'Recommended (firmer under hips, softer at shoulders)' : 'Helpful but optional',
+        cooling: conditions.includes('hot') ? 'Prioritize: coils for airflow, latex or gel/copper foams, cooling cover' : 'Standard',
+        motion: bounce === 'isolated' ? 'High: pocketed coils plus memory foam' : (bounce === 'responsive' ? 'Lower priority: favor responsive latex or poly foam' : 'Moderate: pocketed coils'),
+        material: { organic: 'GOTS/GOLS-certified organic', natural: 'Natural latex, wool, cotton (no polyurethane foam)', safe: 'CertiPUR-US foams, GREENGUARD Gold', none: 'No preference' }[material] || 'No preference'
+      };
+      const soft = position === 'side' || light;
+      const idealLayers = [
+        material === 'organic' || material === 'natural' ? 'Breathable cover: organic cotton with wool' : (conditions.includes('hot') ? 'Cooling cover (phase-change or cooling fibers)' : 'Breathable knit cover'),
+        (material === 'organic' || material === 'natural' ? 'Comfort: natural latex, ' : (bounce === 'isolated' ? 'Comfort: memory foam (gel/copper if hot), ' : 'Comfort: latex or responsive foam, ')) + (soft ? '2–3" at ILD ~10–19' : heavy ? '1.5–2" at ILD ~19–24' : '1.5–2" at ILD ~14–24') + (material === 'organic' || material === 'natural' ? '' : ', density ' + (heavy ? '4+ lb/ft³ memory / 2.0+ poly' : '3–4 lb/ft³ memory / 1.8+ poly')),
+        'Transition: ' + (heavy ? '1–2" firmer foam or latex, ILD ~24–32' : '1" transition, ILD ~20–28') + (needsZoned ? ', zoned firmer under hips' : ''),
+        'Support: pocketed coils ' + (heavy ? '8"+ tall, ~13–14 gauge center' : '6–8" tall, ~13.5–15 gauge') + (needsZoned || conditions.includes('back') ? ', zoned (firmer hips, softer shoulders)' : '') + ', reinforced edge',
+        'Base: 0.5–1" high-density foam or latex' + (heavy ? ' (1.8+ lb/ft³)' : '')
+      ];
+      const personTarget = (label, pos, wt, b, conds) => {
+        let f = { side: 5, back: 6.5, stomach: 7, combo: 6 }[pos] || 6;
+        if (wt < 130) f -= 0.5; else if (wt > 230) f += 1;
+        if (b && b.bmi && b.bmi > 30 && wt <= 230) f += 0.5;
+        if (b && b.curvy) f -= 0.5;
+        const pp = (conds.includes('hip') ? 1 : 0) + (conds.includes('shoulder') ? 1 : 0);
+        f -= Math.min(1.5, pp * 0.75);
+        if (conds.includes('back') && f < 5.5) f = 5.5;
+        f = Math.max(3, Math.min(8, Math.round(f * 2) / 2));
+        const softTop = f <= 5.5;
+        return { label, pos, wt, firm: f,
+          comfort: softTop ? '3–5" comfort, top layer ILD ~10–16' : (f >= 7 ? '2–3" comfort, ILD ~19–28' : '2–4" comfort, ILD ~14–22'),
+          density: wt > 230 ? 'memory 4+ lb/ft³ / poly 1.8–2.0+' : 'memory 3–4 lb/ft³ / poly 1.5–1.8+',
+          coils: wt > 230 ? '8"+ pocketed, ~13–14 ga center' : '6–8" pocketed, ~13.5–15 ga',
+          zoned: pp > 0 || (b && (b.curvy || b.broad)) || conds.includes('back'),
+          pressure: [conds.includes('hip') ? 'hips' : '', conds.includes('shoulder') ? 'shoulders' : ''].filter(Boolean).join(' & ') };
+      };
+      const sides = [personTarget('Your side', position, weight, people[0].b, myConds)];
+      if (who === 'couple') sides.push(personTarget('Partner side', partnerPosition, partnerWeight, people[1].b, partnerConds));
+      const firmGap = sides.length === 2 ? Math.abs(sides[0].firm - sides[1].firm) : 0;
+      const splitNeeded = firmGap >= 1.5;
+      const sidesHtml = sides.length < 2 ? '' : `<div class="mt-4 text-sm"><strong>Per-side design:</strong>
+        <div class="grid md:grid-cols-2 gap-3 mt-2">${sides.map(t => `<div class="bg-white rounded-lg p-3 border border-indigo-100">
+          <p class="font-medium">${t.label} (${t.pos}, ${t.wt} lb)</p>
+          <p>Firmness: ${t.firm}/10</p><p>Comfort: ${t.comfort}</p><p>Density: ${t.density}</p><p>Coils: ${t.coils}</p>
+          <p>Zoning: ${t.zoned ? 'Yes' + (t.pressure ? ' (relief for ' + t.pressure + ')' : '') : 'Optional'}</p></div>`).join('')}</div>
+        <p class="mt-2 ${splitNeeded ? 'font-semibold text-amber-700' : 'text-slate-600'}">${splitNeeded
+          ? 'Your sides differ by ' + firmGap + ' firmness points. Recommend a split king or dual-firmness build, or a custom split build by Spine Align made to each side’s specs.'
+          : 'Your sides are within ' + firmGap + ' firmness points, so one shared feel can work; motion isolation matters.'}</p></div>`;
+      let idealEl = document.getElementById('ideal');
+      if (!idealEl) { idealEl = document.createElement('div'); idealEl.id = 'ideal'; reasoningEl.parentNode.insertBefore(idealEl, reasoningEl); }
+      idealEl.className = 'border-2 border-indigo-200 bg-indigo-50 rounded-xl p-5 mb-6';
+      idealEl.innerHTML = `<h4 class="font-semibold text-lg mb-2">Your ideal mattress</h4>
+        <ul class="text-sm space-y-1">
+          <li><strong>Target firmness:</strong> ${firmNum} / 10 (${firmness})</li>
+          <li><strong>Construction:</strong> ${ideal.construction}</li>
+          <li><strong>Comfort layers:</strong> ${ideal.comfort}</li>
+          <li><strong>Comfort-layer ILD:</strong> ${ideal.ild}</li>
+          <li><strong>Foam density:</strong> ${ideal.density}</li>
+          <li><strong>Coils (if hybrid):</strong> ${ideal.coils}</li>
+          <li><strong>Zoning:</strong> ${ideal.zoning}</li>
+          <li><strong>Cooling:</strong> ${ideal.cooling}</li>
+          <li><strong>Motion isolation:</strong> ${ideal.motion}</li>
+          <li><strong>Materials:</strong> ${ideal.material}</li>
+        </ul>
+        <p class="text-xs text-slate-500 mt-2">These are guideline ranges from general sleep-science guidance, not product specs. The picks below are scored by how close they come.</p>
+        <div class="mt-3 text-sm"><strong>Designed layer-by-layer (top → bottom):</strong>
+          <ol id="idealLayers" class="list-decimal ml-5 mt-1 space-y-0.5">${idealLayers.map(l => '<li>' + l + '</li>').join('')}</ol></div>
+        ${sidesHtml}
+        <div class="flex flex-wrap gap-2 mt-4">
+          <a href="${shopUrl('chirobed', 'custom')}" target="_blank" rel="noopener" class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-lg">${splitNeeded ? 'Get a custom split build by Spine Align →' : 'Get this custom made by Spine Align →'}</a>
+          <button type="button" id="copyDesign" class="border border-indigo-600 text-indigo-700 text-sm font-medium px-4 py-2 rounded-lg hover:bg-indigo-100">Copy my design</button>
+        </div>`;
+      const designText = 'My SomniSmart ideal mattress design\nTarget firmness: ' + firmNum + '/10 (' + firmness + ')\n' +
+        Object.entries(ideal).map(([k, v]) => k + ': ' + v).join('\n') + '\nLayers (top to bottom):\n' + idealLayers.map((l, i) => (i + 1) + '. ' + l.replace(/<[^>]+>/g, '')).join('\n') +
+        (sides.length > 1 ? '\nPer side:\n' + sides.map(t => t.label + ': ' + t.firm + '/10, ' + t.comfort + ', ' + t.density + ', ' + t.coils + ', zoning ' + (t.zoned ? 'yes' : 'optional')).join('\n') + (splitNeeded ? '\nSplit/dual-firmness build recommended.' : '') : '') + '\n(Guideline ranges, not product specs.)';
+      document.getElementById('copyDesign').onclick = (e) => {
+        const btn = e.currentTarget, done = () => { btn.textContent = 'Copied ✓'; setTimeout(() => btn.textContent = 'Copy my design', 2000); };
+        if (navigator.clipboard) navigator.clipboard.writeText(designText).then(done, () => window.prompt('Copy your design:', designText));
+        else window.prompt('Copy your design:', designText);
+      };
+      const matchInfo = (s) => {
+        if (!s || s.custom) return { score: null, note: 'Built to order to your exact design above. Ask Spine Align to build these targets.' };
+        const n = []; let pts = 0, max = 0;
+        const chk = (ok, good, bad, w = 1) => { max += w; if (ok === true) { pts += w; n.push('✓ ' + good); } else if (ok === null) { pts += w / 2; n.push('~ ' + bad); } else n.push('✗ ' + bad); };
+        const wantLatex = material === 'organic' || material === 'natural';
+        const hasMemory = /memory/i.test(JSON.stringify(s.layers));
+        if (wantLatex) chk(s.type.includes('latex'), 'latex build fits your material preference', 'uses foams, not your natural/organic preference', 2);
+        else if (bounce === 'isolated') chk(hasMemory ? true : null, 'memory foam for motion isolation', 'less motion isolation than memory foam');
+        else chk(s.type !== 'innerspring' || null, s.type + ' construction', 'traditional innerspring');
+        if (needsZoned || conditions.includes('back')) chk(s.zoned, 'zoned support', 'no published zoning', 2);
+        if (heavy) chk(s.gaugeMin ? (s.gaugeMin <= 14 ? true : null) : null, 'heavy-gauge coils (' + s.gaugeMin + ' ga)', s.gaugeMin ? 'lightest-gauge coils ' + s.gaugeMin + ' ga' : 'coil gauge not published', 2);
+        if (conditions.includes('hot')) chk(s.coils || s.type.includes('latex') ? true : null, 'coils/latex for airflow', 'limited airflow');
+        if (sides.length === 2) chk(splitNeeded ? false : true, 'one feel can suit both sleepers', 'sides differ ' + firmGap + ' pts; one firmness can’t fit both (needs split/dual build)', 2);
+        const pub = JSON.stringify(s).split(NP).length - 1;
+        chk(pub <= 4 ? true : (pub <= 10 ? null : false), 'specs well published', pub + ' spec fields not published');
+        return { score: Math.round(100 * pts / max), note: n.join(' · ') };
+      };
+      const matchNote = (s) => matchInfo(s).note;
+      const specKey = (r) => r.product === 'chirobed' ? 'chirobed' : /Plus/.test(r.name) ? 'winkbedplus' : /Classic/.test(r.name) ? 'saatvaclassic'
+        : /Zenhaven/.test(r.name) ? 'zenhaven' : /Latex Hybrid/.test(r.name) ? 'saatvalatex' : r.product;
+      const recsEl = document.getElementById('recs');
+      const bestScore = Math.max(...recs.filter(r => !r.own).map(r => matchInfo(SPECS[specKey(r)]).score));
+      const custom = recs.find(r => r.own);
+      if (custom) { custom.why += ' Spine Align can build the exact "Your ideal mattress" design above.'; custom.details += ' · Builds your exact design'; }
+      let weakEl = document.getElementById('weakMatch');
+      if (!weakEl) { weakEl = document.createElement('div'); weakEl.id = 'weakMatch'; recsEl.parentNode.insertBefore(weakEl, recsEl); }
+      weakEl.className = bestScore < 70 ? 'border-2 border-amber-400 bg-amber-50 rounded-xl p-5 mb-6' : 'hidden';
+      weakEl.innerHTML = bestScore < 70 ? `<p class="font-semibold">None of these match your ideal closely (best match ${bestScore}%). Ask to be custom made by Spine Align.</p>
+        <a href="${shopUrl('chirobed', 'custom')}" target="_blank" rel="noopener" class="inline-block mt-3 bg-amber-500 hover:bg-amber-400 text-white font-semibold px-5 py-2.5 rounded-lg">Ask Spine Align to custom make it →</a>` : '';
+      recsEl.innerHTML = recs.map(r => `
+        <div class="border border-slate-200 rounded-xl p-5">
+          <div class="flex justify-between items-start mb-2">
+            <span class="text-xs font-medium uppercase tracking-wide text-indigo-600">${r.tier}</span>
+          </div>
+          <h4 class="font-semibold text-lg">${r.name}</h4>
+          <p class="text-sm text-slate-600 mb-2">${r.details}</p>
+          <p class="text-sm mb-3">${r.why}</p>
+          <a href="${shopUrl(r.product, r.slot)}" target="_blank" rel="${r.own ? 'noopener' : 'sponsored nofollow noopener'}" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-lg">Shop ${r.label || (r.product.charAt(0).toUpperCase() + r.product.slice(1)).replace('Winkbed','WinkBed').replace('Brooklyn','Brooklyn Bedding')} →</a>
+          <p class="text-xs bg-slate-50 rounded p-2 mt-3"><strong>How close it matches${r.own ? '' : ': ' + matchInfo(SPECS[specKey(r)]).score + '%'}:</strong> ${matchNote(SPECS[specKey(r)])}</p>
+          <details class="mt-2 text-xs"><summary class="cursor-pointer text-indigo-600 font-medium">Full specs</summary><div class="mt-2 overflow-x-auto">${specRows(SPECS[specKey(r)])}</div></details>
+          ${r.own ? '<p class="text-xs text-slate-500 mt-2">SomniSmart is affiliated with Chirobed (our own brand).</p>' : ''}
+        </div>
+      `).join('') + '<p class="text-xs text-slate-500 md:col-span-2">Specs come from manufacturer pages and independent reviewers (NapLab, GoodBed, Sleep Doctor, retailer listings), are for queen size unless noted, and may vary by size, firmness and model year. "Not published by brand" means we could not find a public figure.</p>';
+
+      document.getElementById('results').classList.remove('hidden');
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  </script>
+
+</body>
+</html>
