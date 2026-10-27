@@ -53,6 +53,7 @@
         <a href="pillows.html" class="text-indigo-600 font-semibold whitespace-nowrap" aria-current="page">Pillows</a>
         <a href="accessories.html" class="hover:text-indigo-600 whitespace-nowrap">Accessories</a>
         <a href="nutrition.html" class="hover:text-indigo-600 whitespace-nowrap">Nutrition</a>
+        <a href="guides/" class="hover:text-indigo-600 whitespace-nowrap">Guides</a>
       </div>
     </div>
   </nav>
@@ -144,6 +145,7 @@
       <a href="pillows.html" class="hover:text-white">Pillows</a>
       <a href="accessories.html" class="hover:text-white">Accessories</a>
       <a href="nutrition.html" class="hover:text-white">Nutrition</a>
+      <a href="guides/" class="hover:text-white">Guides</a>
     </p>
     <p class="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1">
       <a href="about.html" class="hover:text-white">About</a>
@@ -365,5 +367,9 @@
       const r = document.getElementById('results'); r.classList.remove('hidden'); r.scrollIntoView({ behavior: 'smooth' });
     });
   </script>
+  <script src="share.js"></script>
+  <script>SomniShare.init({ form: 'pillowForm', results: 'results', page: 'pillows.html', subject: 'My ideal pillow per SomniSmart',
+      text: function () { var dd = document.querySelector('#pIdeal dd'); var top = document.querySelector('#pRecs h4');
+        return 'My ideal pillow per SomniSmart: ' + (dd ? dd.textContent.trim() + ' loft' : '') + (top ? '; best match ' + top.textContent.trim() : '') + '. Find yours:'; } });</script>
 </body>
 </html>
