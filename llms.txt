@@ -63,3 +63,4 @@ The homepage has a Frequently Asked Questions section (mattress-focused) (https:
 - [Disclaimer](https://somnismart.com/disclaimer.html): not medical advice
 - [Privacy Policy](https://somnismart.com/privacy.html)
 - [Contact](https://somnismart.com/contact.html): hello@somnismart.com
+- X (Twitter): [@somnismart](https://x.com/somnismart), the official SomniSmart account
