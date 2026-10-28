@@ -28,17 +28,21 @@
 <body class="bg-slate-50 text-slate-800">
 
   <!-- Nav -->
-  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+  <!-- Shared site nav -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50" aria-label="Main">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
       <a href="index.html" class="flex items-center gap-2">
         <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">S</div>
         <span class="font-semibold text-lg">SomniSmart</span>
       </a>
-      <div class="hidden md:flex gap-6 text-sm">
-        <a href="index.html#how" class="hover:text-indigo-600">How it works</a>
-        <a href="index.html#science" class="hover:text-indigo-600">The science</a>
-        <a href="index.html#start" class="hover:text-indigo-600">Get recommendations</a>
-        <a href="index.html#transparency" class="hover:text-indigo-600">Transparency</a>
+      <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm">
+        <a href="index.html" class="hover:text-indigo-600 whitespace-nowrap">Home</a>
+        <a href="mattresses.html" class="hover:text-indigo-600 whitespace-nowrap">Mattresses</a>
+        <a href="pillows.html" class="hover:text-indigo-600 whitespace-nowrap">Pillows</a>
+        <a href="accessories.html" class="hover:text-indigo-600 whitespace-nowrap">Accessories</a>
+        <a href="nutrition.html" class="hover:text-indigo-600 whitespace-nowrap">Nutrition</a>
+        <a href="guides/" class="hover:text-indigo-600 whitespace-nowrap">Guides</a>
+        <a href="ai-sleep-research.html" class="hover:text-indigo-600 whitespace-nowrap">AI &amp; Sleep</a>
       </div>
     </div>
   </nav>
@@ -69,9 +73,18 @@
 
   <!-- Footer -->
   <footer class="bg-slate-900 text-slate-400 py-8 px-4 text-center text-sm">
-    <p class="mb-2">SomniSmart · Science-based mattress matching powered by Grok</p>
+    <p class="mb-2">SomniSmart · Science-based sleep advice powered by Grok</p>
     <p>Free for visitors. Ranked only by matching rules. Affiliate links do not influence recommendations.</p>
     <p class="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
+      <a href="index.html" class="hover:text-white">Home</a>
+      <a href="mattresses.html" class="hover:text-white">Mattresses</a>
+      <a href="pillows.html" class="hover:text-white">Pillows</a>
+      <a href="accessories.html" class="hover:text-white">Accessories</a>
+      <a href="nutrition.html" class="hover:text-white">Nutrition</a>
+      <a href="guides/" class="hover:text-white">Guides</a>
+      <a href="ai-sleep-research.html" class="hover:text-white">AI &amp; Sleep</a>
+    </p>
+    <p class="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1">
       <a href="about.html" class="hover:text-white">About</a>
       <a href="disclosure.html" class="hover:text-white">Affiliate disclosure</a>
       <a href="privacy.html" class="hover:text-white">Privacy policy</a>
