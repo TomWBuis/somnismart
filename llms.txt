@@ -21,6 +21,7 @@ Evidence-based articles (900–1,400 words, cited sources, Article structured da
 ## Research roundup
 
 - [What AI Is Learning About Sleep](https://somnismart.com/ai-sleep-research.html): sourced roundup (Oct 2025 to Oct 2026) of AI sleep research such as the SleepFM foundation model (Nature Medicine 2026), lucid-dream communication and dream-recall studies, verified Neuralink PRIME trial facts (no sleep application announced), targeted memory reactivation, closed-loop acoustic stimulation and nightmare treatment. It notes that Grok does not learn from visitors' quiz answers.
+- [Best Nights Sleep](https://somnismart.com/best-nights-sleep.html): pin the place of your best night's sleep and post it on X with #BestNightsSleep and @somnismart. SomniSmart features a reviewed leaderboard of public posts (data/best-nights.json); nothing is collected on the site. Posting with the hashtag means agreeing SomniSmart may feature the public post; removal on request via the contact page.
 
 ## Sharing results
 
@@ -58,6 +59,7 @@ The homepage has a Frequently Asked Questions section (mattress-focused) (https:
 - [Sleep Nutrition](https://somnismart.com/nutrition.html)
 - [Guides](https://somnismart.com/guides/): evidence-based sleep guides
 - [AI & Sleep](https://somnismart.com/ai-sleep-research.html): what AI is learning about sleep
+- [Best Nights Sleep](https://somnismart.com/best-nights-sleep.html): community map and leaderboard of #BestNightsSleep posts on X
 - [About](https://somnismart.com/about.html): what SomniSmart is and how recommendations work
 - [Affiliate Disclosure](https://somnismart.com/disclosure.html): how the site earns money and the Chirobed own-brand disclosure
 - [Disclaimer](https://somnismart.com/disclaimer.html): not medical advice

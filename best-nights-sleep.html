@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Nights Sleep: Pin Your Most Memorable Night | SomniSmart</title>
+  <meta name="description" content="Pin the place where you had your best night of sleep, add a short story and post it on X with #BestNightsSleep. See the most interesting nights ranked by SomniSmart.">
+  <link rel="canonical" href="https://somnismart.com/best-nights-sleep.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SomniSmart">
+  <meta property="og:title" content="Best Nights Sleep: Pin Your Most Memorable Night | SomniSmart">
+  <meta property="og:description" content="Pin the place where you had your best night of sleep, add a short story and post it on X with #BestNightsSleep. See the most interesting nights ranked by SomniSmart.">
+  <meta property="og:url" content="https://somnismart.com/best-nights-sleep.html">
+  <meta property="og:image" content="https://somnismart.com/assets/mascot-robot.svg">
+  <meta property="og:image:alt" content="SomniSmart mascot robot hugging a pillow">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Best Nights Sleep: Pin Your Most Memorable Night | SomniSmart">
+  <meta name="twitter:description" content="Pin the place where you had your best night of sleep, add a short story and post it on X with #BestNightsSleep. See the most interesting nights ranked by SomniSmart.">
+  <meta name="twitter:image" content="https://somnismart.com/assets/mascot-robot.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Best Nights Sleep",
+  "url": "https://somnismart.com/best-nights-sleep.html",
+  "description": "Pin the place where you had your best night of sleep, add a short story and post it on X with #BestNightsSleep. See the most interesting nights ranked by SomniSmart.",
+  "datePublished": "2026-10-28",
+  "dateModified": "2026-10-28",
+  "publisher": {
+    "@type": "Organization",
+    "name": "SomniSmart",
+    "url": "https://somnismart.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://somnismart.com/assets/mascot-robot.svg"
+    }
+  },
+  "image": "https://somnismart.com/assets/mascot-robot.svg",
+  "inLanguage": "en-US",
+  "keywords": "BestNightsSleep, sleep, travel, map"
+}
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <style>#map{height:440px} @media(max-width:640px){#map{height:340px}} .leaflet-container{font:inherit}</style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system_ui, sans-serif; }
+    .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <!-- Shared site nav -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50" aria-label="Main">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">S</div>
+        <span class="font-semibold text-lg">SomniSmart</span>
+      </a>
+      <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm">
+        <a href="index.html" class="hover:text-indigo-600 whitespace-nowrap">Home</a>
+        <a href="mattresses.html" class="hover:text-indigo-600 whitespace-nowrap">Mattresses</a>
+        <a href="pillows.html" class="hover:text-indigo-600 whitespace-nowrap">Pillows</a>
+        <a href="accessories.html" class="hover:text-indigo-600 whitespace-nowrap">Accessories</a>
+        <a href="nutrition.html" class="hover:text-indigo-600 whitespace-nowrap">Nutrition</a>
+        <a href="guides/" class="hover:text-indigo-600 whitespace-nowrap">Guides</a>
+        <a href="ai-sleep-research.html" class="hover:text-indigo-600 whitespace-nowrap">AI &amp; Sleep</a>
+        <a href="best-nights-sleep.html" class="text-indigo-600 font-semibold whitespace-nowrap" aria-current="page">Best Nights Sleep</a>
+      </div>
+    </div>
+  </nav>
+  <section class="hero-gradient text-white py-12 px-4">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8">
+      <img src="assets/mascot-robot.svg" alt="SomniSmart mascot robot hugging a pillow" class="w-32 h-32 md:w-40 md:h-40">
+      <div>
+        <p class="text-indigo-300 text-sm font-semibold uppercase tracking-wide">#BestNightsSleep</p>
+        <h1 class="text-3xl md:text-4xl font-bold mt-1">Where did you have your best night's sleep?</h1>
+        <p class="mt-3 text-slate-300 max-w-2xl">Pin the place on the map, tell us what made it special in a sentence or two, and post it on X with #BestNightsSleep. We feature the most interesting nights below. <a href="https://x.com/somnismart" target="_blank" rel="noopener" class="text-indigo-300 underline hover:text-white">Follow @somnismart</a></p>
+      </div>
+    </div>
+  </section>
+  <main class="px-4 py-10">
+    <div class="max-w-5xl mx-auto space-y-10">
+      <section class="bg-white border border-slate-200 rounded-2xl p-5 md:p-8">
+        <h2 class="text-2xl font-bold text-slate-900">1. Pin your place</h2>
+        <form id="searchForm" class="mt-4 flex gap-2" role="search">
+          <label for="q" class="sr-only">Search for a town or city</label>
+          <input id="q" type="search" placeholder="Search a town, city or landmark…" class="flex-1 min-w-0 border border-slate-300 rounded-lg px-3 py-2">
+          <button class="bg-slate-800 text-white px-4 py-2 rounded-lg">Search</button>
+        </form>
+        <p class="text-xs text-slate-500 mt-1">Or click the map. Search and place names use OpenStreetMap's Nominatim service. Your search text is sent to it, and lookups happen only when you search or click.</p>
+        <div id="map" class="mt-4 rounded-xl border border-slate-200 z-0"></div>
+        <p id="status" class="text-sm text-slate-600 mt-2" aria-live="polite"></p>
+        <div class="mt-3 bg-rose-50 border border-rose-200 text-rose-900 text-sm rounded-lg p-3"><strong>Privacy:</strong> please don't pin your home or anyone's exact address. Use a town, city, park or hotel name. Only the place name, plus rounded coordinates if you choose, goes into your post.</div>
+        <h2 class="text-2xl font-bold text-slate-900 mt-8">2. Tell the story</h2>
+        <div class="mt-4 grid md:grid-cols-2 gap-4">
+          <label class="block text-sm">Place name<input id="place" maxlength="80" class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2" placeholder="e.g. Kyoto, Japan"></label>
+          <label class="block text-sm">First name or X handle (optional)<input id="name" maxlength="30" class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2" placeholder="e.g. Sam"></label>
+        </div>
+        <label class="block text-sm mt-4">Your comment<textarea id="comment" maxlength="200" rows="3" class="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2" placeholder="What made that night so good?"></textarea></label>
+        <div class="flex flex-wrap justify-between text-xs text-slate-500 mt-1"><span id="count">0 / 200</span><span id="coords"></span></div>
+        <label class="inline-flex items-center gap-2 text-sm mt-2"><input id="incCoords" type="checkbox"> Include approximate coordinates (rounded to about 1 km)</label>
+        <h2 class="text-2xl font-bold text-slate-900 mt-8">3. Post it on X</h2>
+        <p class="text-sm text-slate-600 mt-2">Preview of your post:</p>
+        <p id="preview" class="mt-1 bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm whitespace-pre-wrap"></p>
+        <a id="postX" href="#" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 bg-black hover:bg-slate-800 text-white font-medium px-5 py-3 rounded-lg">Post it on X</a>
+        <a href="https://x.com/somnismart" target="_blank" rel="noopener" class="mt-4 ml-2 inline-flex items-center gap-2 border border-slate-300 hover:bg-slate-100 text-slate-800 font-medium px-5 py-3 rounded-lg">Follow @somnismart</a>
+        <p class="text-xs text-slate-500 mt-2">This opens X with your post filled in. Nothing is saved on SomniSmart, and you can edit the post before you publish it.</p>
+        <p class="text-xs text-slate-500 mt-2">By posting with #BestNightsSleep you agree SomniSmart may feature your public post here; ask us to remove it anytime via the <a class="text-indigo-600 underline" href="contact.html">contact page</a>.</p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900">Most interesting nights</h2>
+        <ol id="board" class="mt-4 space-y-3"><li class="text-slate-500">Loading…</li></ol>
+      </section>
+      <section class="bg-white border border-slate-200 rounded-2xl p-5 md:p-8 text-slate-700">
+        <h2 class="text-xl font-bold text-slate-900">How the ranking works</h2>
+        <ul class="list-disc pl-5 mt-3 space-y-1 text-sm">
+          <li>We only feature <strong>public X posts that use #BestNightsSleep</strong>. Nothing is collected on this site.</li>
+          <li>SomniSmart's advisor picks the most interesting nights based on how <strong>unusual the place</strong> is, how <strong>vivid the story</strong> is, and whether it offers a useful <strong>sleep insight</strong>, such as darkness, cool air, quiet or a great bed.</li>
+          <li>Every entry is reviewed by a person before it appears. We leave out ads, self-promotion, offensive content, exact home addresses and anything that identifies other people.</li>
+          <li>Want yours removed? Delete the post on X or <a class="text-indigo-600 underline" href="contact.html">contact us</a>.</li>
+        </ul>
+        <p class="text-sm mt-4">Inspired? Find your own best night: <a class="text-indigo-600 underline" href="mattresses.html#start">mattress advisor</a> · <a class="text-indigo-600 underline" href="pillows.html#start">pillow advisor</a> · <a class="text-indigo-600 underline" href="accessories.html#start">sleep accessories</a> · <a class="text-indigo-600 underline" href="guides/cooling-hot-sleepers-couples.html">cooling guide</a>.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="bg-slate-900 text-slate-400 py-8 px-4 text-center text-sm">
+    <p class="mb-2">SomniSmart · Evidence-based sleep guides powered by Grok</p>
+    <p>Free for visitors. Ranked only by matching rules. Affiliate links do not influence recommendations.</p>
+    <p class="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
+      <a href="index.html" class="hover:text-white">Home</a>
+      <a href="mattresses.html" class="hover:text-white">Mattresses</a>
+      <a href="pillows.html" class="hover:text-white">Pillows</a>
+      <a href="accessories.html" class="hover:text-white">Accessories</a>
+      <a href="nutrition.html" class="hover:text-white">Nutrition</a>
+      <a href="guides/" class="hover:text-white">Guides</a>
+      <a href="ai-sleep-research.html" class="hover:text-white">AI &amp; Sleep</a>
+      <a href="best-nights-sleep.html" class="hover:text-white">Best Nights Sleep</a>
+    </p>
+    <p class="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1">
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="disclosure.html" class="hover:text-white">Affiliate disclosure</a>
+      <a href="privacy.html" class="hover:text-white">Privacy policy</a>
+      <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      <a href="contact.html" class="hover:text-white">Contact</a>
+      <a href="https://x.com/somnismart" class="hover:text-white" target="_blank" rel="noopener me">X @somnismart</a>
+    </p>
+    <p class="mt-4 text-slate-500">© 2026 SomniSmart. All rights reserved.</p>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+(function(){
+  var PAGE='https://somnismart.com/best-nights-sleep.html', MAX=200;
+  var map=L.map('map',{worldCopyJump:true}).setView([25,5],2);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+  var pin=null, picked={place:'',lat:null,lng:null};
+  var $=function(id){return document.getElementById(id)};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function r2(x){return Math.round(x*100)/100}
+  function setPin(lat,lng,place){
+    picked={lat:r2(lat),lng:r2(lng),place:place||picked.place};
+    if(pin) pin.setLatLng([lat,lng]); else pin=L.marker([lat,lng],{title:'Your pin'}).addTo(map);
+    $('place').value=picked.place; $('coords').textContent='Approx. '+picked.lat+', '+picked.lng; update();
+  }
+  // Nominatim: max 1 request/second, only on explicit user action (policy: operations.osmfoundation.org/policies/nominatim/)
+  var last=0;
+  function nom(u){var w=Math.max(0,1100-(Date.now()-last));return new Promise(function(r){setTimeout(r,w)}).then(function(){last=Date.now();return fetch(u,{headers:{'Accept-Language':navigator.language||'en'}})}).then(function(x){return x.json()})}
+  function cityName(a){a=a||{};var c=a.city||a.town||a.village||a.hamlet||a.county||a.state||'';return [c,a.state&&a.state!==c?a.state:'',a.country].filter(Boolean).join(', ')}
+  map.on('click',function(e){
+    setPin(e.latlng.lat,e.latlng.lng,'');
+    $('status').textContent='Looking up the town or city…';
+    nom('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=10&addressdetails=1&lat='+e.latlng.lat+'&lon='+e.latlng.lng)
+      .then(function(j){var p=cityName(j.address);picked.place=p;$('place').value=p;$('status').textContent=p?'':'No place name found. Type one in.';update()})
+      .catch(function(){$('status').textContent='Could not look up a place name. Type one in.'});
+  });
+  $('searchForm').addEventListener('submit',function(ev){
+    ev.preventDefault(); var q=$('q').value.trim(); if(!q) return;
+    $('status').textContent='Searching…';
+    nom('https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&addressdetails=1&q='+encodeURIComponent(q))
+      .then(function(j){ if(!j.length){$('status').textContent='No match. Try a town or city name.';return}
+        var p=cityName(j[0].address)||j[0].display_name; map.setView([+j[0].lat,+j[0].lon],10); setPin(+j[0].lat,+j[0].lon,p); $('status').textContent=''; })
+      .catch(function(){$('status').textContent='Search is unavailable right now. Click the map instead.'});
+  });
+  function text(){
+    var c=$('comment').value.trim(), p=$('place').value.trim(), nm=$('name').value.trim(), incl=$('incCoords').checked&&picked.lat!=null;
+    var mk=function(cc){return 'My best night\'s sleep'+(p?' was in '+p:'')+(cc?': "'+cc+'"':'')+(nm?' (' + nm + ')':'')+(incl?' ['+picked.lat+', '+picked.lng+']':'')+' #BestNightsSleep @somnismart';};
+    var t=mk(c), MAX=280-24; /* X counts the link as 23 chars + 1 space */
+    if(t.length>MAX&&c){var cut=c.slice(0,Math.max(0,c.length-(t.length-MAX)-1)).replace(/\s+\S*$/,'');t=mk(cut?cut+'\u2026':'');}
+    if(t.length>MAX){t=t.slice(0,MAX);}
+    return t;
+  }
+  function update(){
+    var c=$('comment').value; $('count').textContent=c.length+' / '+MAX;
+    var t=text(); $('preview').textContent=t+' '+PAGE;
+    var ok=$('place').value.trim()&&c.trim();
+    var a=$('postX'); a.href='https://x.com/intent/post?text='+encodeURIComponent(t)+'&url='+encodeURIComponent(PAGE);
+    a.classList.toggle('opacity-50',!ok); a.classList.toggle('pointer-events-none',!ok); a.setAttribute('aria-disabled',ok?'false':'true');
+  }
+  ['comment','place','name','incCoords'].forEach(function(id){$(id).addEventListener('input',update);$(id).addEventListener('change',update)});
+  update();
+  // leaderboard
+  fetch('data/best-nights.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){
+    var list=(d.entries||[]).slice().sort(function(a,b){return a.rank-b.rank});
+    var html='', group=L.featureGroup();
+    list.forEach(function(e){
+      var tag='';
+      var link=e.xUrl?'<a class="text-indigo-600 underline" href="'+esc(e.xUrl)+'" target="_blank" rel="noopener nofollow">View on X</a>':'';
+      html+='<li class="bg-white border border-slate-200 rounded-2xl p-5 flex gap-4"><div class="text-2xl font-bold text-indigo-600 w-8 shrink-0">'+esc(e.rank)+'</div><div><h3 class="font-semibold text-slate-900">'+esc(e.place)+tag+'</h3><p class="mt-1 text-slate-700">'+esc(e.comment)+'</p><p class="mt-2 text-xs text-slate-500">'+esc(e.author)+' · '+esc(e.date)+' · '+link+'</p><p class="mt-2 text-sm text-slate-600"><strong>Why it ranks:</strong> '+esc(e.why)+'</p></div></li>';
+      var m=L.circleMarker([e.lat,e.lng],{radius:8,color:'#4f46e5',fillColor:'#818cf8',fillOpacity:.9,weight:2}).bindPopup('<strong>#'+esc(e.rank)+' '+esc(e.place)+'</strong>'+'<br>'+esc(e.comment));
+      group.addLayer(m);
+    });
+    group.addTo(map); $('board').innerHTML=html||'<li class="text-slate-500">Be the first — post your best night\'s sleep with #BestNightsSleep.</li>';
+  }).catch(function(){$('board').innerHTML='<li class="text-slate-500">Leaderboard could not be loaded.</li>'});
+})();
+</script>
+</body>
+</html>
